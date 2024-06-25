@@ -1,7 +1,9 @@
 
 const page = () => {
   return (
-    <div>صرافی</div>
+    <div className="max-w-7xl w-full">
+      صرافی
+    </div>
   )
 }
 

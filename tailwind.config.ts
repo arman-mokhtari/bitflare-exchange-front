@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-
 const svgToDataUri = require("mini-svg-data-uri");
 
 const colors = require("tailwindcss/colors");
@@ -10,11 +9,11 @@ const {
 const config = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
+    "./src/pages/**/*.{ts,tsx}",
+    "./src/components/**/*.{ts,tsx}",
+    "./src/app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "./data/**/*.{ts,tsx}",
+    "./src/data/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -45,6 +44,10 @@ const config = {
       // => @media (min-width: 1400px) { ... }
     },
     extend: {
+      fontFamily: {
+        vazir: "var(--font-vazir)",
+        inter: "var(--font-inter)",
+      },
       colors: {
         black: {
           DEFAULT: "#000",
