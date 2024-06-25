@@ -12,11 +12,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function ModeToggle() {
+export function ModeToggle({otherClasses}: {otherClasses?: string}) {
   const { setTheme } = useTheme();
 
   return (
-    <div className="absolute top-5 right-5 ">
+    <div className={`${otherClasses}`}>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" size="icon">
