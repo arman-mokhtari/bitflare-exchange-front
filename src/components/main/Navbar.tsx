@@ -1,7 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { ModeToggle } from "./ModeToggle";
+import { useTheme } from "next-themes";
 
 const dropdownNavs = [
   {
@@ -137,8 +140,8 @@ const Navbar = () => {
     idx: null,
     isActive: false,
   });
-
-  // Replace javascript:void(0) paths with your paths
+  const { theme } = useTheme();
+console.log("theme: ",theme)
   const navigation = [
     { title: "خانه", path: "/", isDrapdown: false },
     {
@@ -163,7 +166,6 @@ const Navbar = () => {
   return (
     <>
       <nav
-        dir="ltr"
         className={`relative z-20 bg-white dark:bg-black-100 w-full md:static md:text-sm md:border-none ${
           state ? "shadow-lg rounded-b-xl md:shadow-none" : ""
         }`}
@@ -172,7 +174,11 @@ const Navbar = () => {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="javascript:void(0)">
               <Image
-                src="https://www.floatui.com/logo.svg"
+                src={
+                  theme === "dark"
+                    ? "/assets/images/logos/logo-dark.png"
+                    : "/assets/images/logos/logo-light.png"
+                }
                 width={120}
                 height={50}
                 alt="Float UI logo"
@@ -223,51 +229,54 @@ const Navbar = () => {
                 return (
                   <li key={idx}>
                     {item.isDrapdown ? (
-                      <button
-                        className="w-full flex items-center justify-between gap-1 text-gray-700 dark:text-white hover:text-indigo-600"
-                        onClick={() =>
-                          setDrapdownState({
-                            idx,
-                            isActive: !drapdownState.isActive,
-                          })
-                        }
-                      >
-                        {item.title}
-                        {drapdownState.idx == idx && drapdownState.isActive ? (
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-5 h-5"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        ) : (
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-5 h-5"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        )}
-                      </button>
+                      <div className="md:mr-6">
+                        <button
+                          className="w-full flex items-center justify-between gap-1 text-gray-700 dark:text-white hover:text-indigo-600"
+                          onClick={() =>
+                            setDrapdownState({
+                              idx,
+                              isActive: !drapdownState.isActive,
+                            })
+                          }
+                        >
+                          {item.title}
+                          {drapdownState.idx == idx &&
+                          drapdownState.isActive ? (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              className="w-5 h-5"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          ) : (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              className="w-5 h-5"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          )}
+                        </button>
+                      </div>
                     ) : (
-                      <a
+                      <Link
                         href={item.path}
                         className="block text-gray-700 dark:text-white hover:text-indigo-600"
                       >
                         {item.title}
-                      </a>
+                      </Link>
                     )}
                     {item.isDrapdown &&
                     drapdownState.idx == idx &&
@@ -311,22 +320,24 @@ const Navbar = () => {
                   </li>
                 );
               })}
+
               <div className="flex-1 items-center justify-end gap-x-6 space-y-3 md:flex md:space-y-0">
+                <ModeToggle />
                 <li>
-                  <a
+                  <Link
                     href="javascript:void(0)"
                     className="block py-3 text-center text-gray-700 dark:text-white hover:text-indigo-600 border rounded-lg md:border-none"
                   >
                     ورود
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="javascript:void(0)"
                     className="block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline"
                   >
                     ثبت نام
-                  </a>
+                  </Link>
                 </li>
               </div>
             </ul>

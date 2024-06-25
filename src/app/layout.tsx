@@ -3,7 +3,6 @@ import { Inter, Vazirmatn } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { cn } from "@/lib/utils";
-import { ModeToggle } from "@/components/main/ModeToggle";
 import Navbar from "@/components/main/Navbar";
 
 const vazir = Vazirmatn({
@@ -46,7 +45,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <ModeToggle />
           {children}
         </ThemeProvider>
       </body>
