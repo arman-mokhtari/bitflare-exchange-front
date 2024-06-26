@@ -206,7 +206,7 @@ const Navbar = ({ className }: { className?: string }) => {
           duration: 0.2,
         }}
         className={cn(
-          "flex md:min-w-[70vw] lg:min-w-fit fixed md:top-6 inset-x-0 md:mx-10 border border-transparent dark:border-white/[0.2] md:rounded-lg  backdrop-blur-sm bg-white/90 dark:bg-black-200/70 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] md:py-2 items-center justify-center",
+          "flex md:min-w-[70vw] lg:min-w-fit fixed md:top-6 inset-x-0 md:mx-10 border-b md:border border-transparent dark:border-white/[0.2] md:rounded-lg  backdrop-blur-sm bg-white/90 dark:bg-black-200/70 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] md:py-2 items-center justify-center",
           className
         )}
       >
@@ -379,7 +379,7 @@ const Navbar = ({ className }: { className?: string }) => {
                   <li>
                     <Link
                       href="javascript:void(0)"
-                      className="block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline"
+                      className="block py-3 px-4 font-medium text-center text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 active:shadow-none rounded-lg shadow md:inline"
                     >
                       ثبت نام
                     </Link>

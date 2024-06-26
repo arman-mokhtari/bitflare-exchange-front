@@ -2,6 +2,7 @@ import { FaDownload } from "react-icons/fa6";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import ConnectButton from "./ui/ConnectButton";
+import ShimmerButton from "./ui/ShimmerButton";
 
 const Hero = () => {
   return (
@@ -33,7 +34,7 @@ const Hero = () => {
             Let&apos;s build something great!
           </p>
           <TextGenerateEffect
-            words="Hi! I'm Arman Mokhtari"
+            words="فروش و خرید ارز دیجیتال در صرافی بیت فلر"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
@@ -45,8 +46,8 @@ const Hero = () => {
             href="https://cdn.workfolio.ir/pdf/cv/arman-cv.pdf"
             className="mt-4"
           >
-            <ConnectButton
-              title="Download my resume"
+            <ShimmerButton
+              title="خرید ارز دیجیتال"
               icon={<FaDownload />}
               position="right"
             />
