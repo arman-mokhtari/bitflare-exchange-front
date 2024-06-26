@@ -3,9 +3,9 @@ import { TracingBeam } from "@/components/ui/TracingBeam";
 
 const page = () => {
   return (
-    <TracingBeam className="px-6">
-      <div className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-        <div className="max-w-7xl w-full">
+    <div className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
+      <div className="max-w-7xl w-full">
+        <TracingBeam className="px-6">
           <Hero />
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque
@@ -1073,9 +1073,9 @@ const page = () => {
             velit enim veniam et fugiat ratione voluptatibus fugit earum
             consectetur delectus.
           </p>
-        </div>
+        </TracingBeam>
       </div>
-    </TracingBeam>
+    </div>
   );
 };
 
