@@ -3,6 +3,8 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import ConnectButton from "./ui/ConnectButton";
 import ShimmerButton from "./ui/ShimmerButton";
+import { FaArrowLeft } from "react-icons/fa";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -31,7 +33,7 @@ const Hero = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Let&apos;s build something great!
+          تجربه‌ای بی‌نظیر از سرمایه‌گذاری مدرن
           </p>
           <TextGenerateEffect
             words="فروش و خرید ارز دیجیتال در صرافی بیت فلر"
@@ -40,18 +42,17 @@ const Hero = () => {
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
             A Full-stack Web Developer based in Iran.
           </p>
-          <a
-            download="resume"
-            title="Download my resume"
-            href="https://cdn.workfolio.ir/pdf/cv/arman-cv.pdf"
+          <Link
+            title="صفحه ارزهای دیجیتال"
+            href="/currencies"
             className="mt-4"
           >
             <ShimmerButton
               title="خرید ارز دیجیتال"
-              icon={<FaDownload />}
+              icon={<FaArrowLeft />}
               position="right"
             />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
