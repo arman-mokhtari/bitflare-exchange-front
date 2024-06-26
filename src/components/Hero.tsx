@@ -46,7 +46,7 @@ const Hero = () => {
           />
           <AvatarGroup />
 
-          <Link title="صفحه ارزهای دیجیتال" href="/currencies" className="mt-4">
+          <Link title="صفحه ارزهای دیجیتال" href="/currencies" className="mt-6">
             <ShimmerButton
               title="خرید ارز دیجیتال"
               icon={<FaArrowLeft />}
