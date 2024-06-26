@@ -5,6 +5,7 @@ import ShimmerButton from "./ui/ShimmerButton";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { AvatarGroup } from "./AvatarGroupe";
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -43,6 +44,7 @@ const Hero = () => {
             words="خرید و فروش ارز دیجیتال در صرافی بیت فلر"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
+          <AvatarGroup />
 
           <Link title="صفحه ارزهای دیجیتال" href="/currencies" className="mt-4">
             <ShimmerButton
