@@ -211,8 +211,10 @@ const Navbar = ({ className }: { className?: string }) => {
         )}
       >
         <nav
-          className={`relative z-20 w-full md:static  md:bg-transparent md:text-sm md:border-none ${
-            state ? "shadow-lg rounded-b-xl md:shadow-none" : ""
+          className={`relative z-20 w-full md:static md:bg-transparent md:text-sm md:border-none ${
+            state
+              ? "shadow-lg rounded-b-xl md:shadow-none bg-white dark:bg-black-100"
+              : ""
           }`}
         >
           <div className="items-center gap-x-14 px-4 max-w-screen-xl mx-auto md:flex md:px-8">
