@@ -30,14 +30,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={cn(
+    <html
+      className={cn(
         "min-h-screen relative w-full bg-background antialiased",
         vazir.variable,
         inter.variable
-      )} lang="fa" dir="rtl" suppressHydrationWarning>
-      <body
-      className="font-vazir"
-      >
+      )}
+      lang="fa"
+      dir="rtl"
+      suppressHydrationWarning
+    >
+      <body className="font-vazir">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
