@@ -1,29 +1,24 @@
-"use client";
+"use client"
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import ShimmerButton from "./ui/ShimmerButton";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { AvatarGroup } from "./AvatarGroupe";
 
 const Hero = () => {
-  const { theme } = useTheme();
   return (
     <div className="pb-20 pt-36">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
-          fill={theme === "light" ? "#37474f" : "white"}
+          fill="white"
         />
         <Spotlight
           className="h-[80vh] w-[50vw] top-10 left-full"
-          fill={theme === "light" ? "#7e57c2" : "purple"}
+          fill="purple"
         />
-        <Spotlight
-          className="left-80 top-28 h-[80vh] w-[50vw]"
-          fill={theme === "light" ? "#90caf9" : "blue"}
-        />
+        <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
       </div>
       <div
         className="h-screen w-full dark:bg-black-100 bg-white-50 dark:bg-grid-white/[0.05] bg-grid-black-100/[0.03]
