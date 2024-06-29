@@ -18,7 +18,6 @@ const ConnectButton = ({
   return (
     <button
       onClick={handleClick}
-      // removed dark:bg-slate-800 bg-slate-200
       className=" bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-lg p-px text-xs font-semibold leading-6  text-white inline-block"
     >
       <span className="absolute inset-0 overflow-hidden rounded-full">
