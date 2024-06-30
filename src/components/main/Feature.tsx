@@ -134,8 +134,7 @@ const Feature = () => {
           <div
             className="absolute inset-0 max-w-xs mx-auto h-72 blur-[118px]"
             style={{
-              background:
-                "linear-gradient(152.92deg, rgba(0, 77, 255, 0.3) 4.54%, rgba(0, 77, 255, 0.2) 34.2%, rgba(0, 77, 255, 0.1) 77.55%)",
+              background: "linear-gradient(152.92deg, rgba(135, 206, 250, 0.2) 4.54%, rgba(70, 130, 180, 0.26) 34.2%, rgba(135, 206, 250, 0.1) 77.55%)",
             }}
           />
         </div>
