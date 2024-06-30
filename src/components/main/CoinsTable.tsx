@@ -12,7 +12,7 @@ import { ArrowDown, ArrowUp } from "lucide-react";
 
 export default function CoinsTable() {
   return (
-    <section className="py-4">
+    <section className="py-14">
       <div className="text-gray-600">
         <div className="">
           <h3 className="text-gray-800 dark:text-gray-200 text-2xl font-semibold md:text-3xl text-center">
