@@ -67,3 +67,55 @@ export const gridItems = [
       spareImg: "",
     },
   ];
+
+  export const coinsData = [
+    {
+      name: "بیت کوین (BTC)",
+      price: "$56,789.00",
+      change: "+2.5%",
+      changeDirection: "up",
+    },
+    {
+      name: "اتریوم (ETH)",
+      price: "$1,789.00",
+      change: "+3.2%",
+      changeDirection: "up",
+    },
+    {
+      name: "لایت کوین (LTC)",
+      price: "$234.00",
+      change: "-1.8%",
+      changeDirection: "down",
+    },
+    {
+      name: "ریپل (XRP)",
+      price: "$0.50",
+      change: "+0.5%",
+      changeDirection: "up",
+    },
+    {
+      name: "چین لینک (LINK)",
+      price: "$25.00",
+      change: "-0.7%",
+      changeDirection: "down",
+    },
+    {
+      name: "پولکادات (DOT)",
+      price: "$40.00",
+      change: "+1.2%",
+      changeDirection: "up",
+    },
+    {
+      name: "یونی سواپ (UNI)",
+      price: "$30.00",
+      change: "-0.3%",
+      changeDirection: "down",
+    },
+    {
+      name: "سولانا (SOL)",
+      price: "$150.00",
+      change: "+4.1%",
+      changeDirection: "up",
+    },
+  ];
+  export const headers = ["بازار", "آخرین قیمت", "تغییرات 24 ساعته",""];
