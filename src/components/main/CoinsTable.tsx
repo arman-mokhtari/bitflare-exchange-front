@@ -19,7 +19,7 @@ export default function CoinsTable() {
           قیمت لحظه ای ارزهای دیجیتال
         </h3>
         
-        <p className="text-gray-600 dark:text-gray-300 my-2">
+        <p className="text-gray-600 dark:text-gray-200 my-2">
           منطبق بر بازار‌های جهانی
         </p>
       </div>
@@ -31,7 +31,7 @@ export default function CoinsTable() {
               {headers.map((header, index) => (
                 <TableHead
                   key={index}
-                  className={`text-right ${
+                  className={`text-right text-gray-800 dark:text-gray-200 ${
                     index === 0 ? "hidden md:table-cell" : ""
                   }`}
                 >
@@ -46,10 +46,10 @@ export default function CoinsTable() {
                 className="!border-b-[12px] border-background "
                 key={index}
               >
-                <TableCell className="font-medium whitespace-nowrap">
+                <TableCell className="font-medium whitespace-nowrap text-gray-800 dark:text-gray-200">
                   {coin.name}
                 </TableCell>
-                <TableCell className="whitespace-nowrap">
+                <TableCell className="whitespace-nowrap text-gray-800 dark:text-gray-200">
                   {coin.price}
                 </TableCell>
                 <TableCell className="hidden md:table-cell whitespace-nowrap">
