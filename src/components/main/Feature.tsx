@@ -123,7 +123,7 @@ const features = [
 
 const Feature = () => {
   return (
-    <section className="py-4">
+    <section className="py-14">
       <div className="text-gray-600">
         <div className="relative max-w-2xl mx-auto sm:text-center">
           <div className="relative z-10">
@@ -135,7 +135,7 @@ const Feature = () => {
             className="absolute inset-0 max-w-xs mx-auto h-72 blur-[118px]"
             style={{
               background:
-                "linear-gradient(152.92deg, rgba(0, 77, 255, 0.4) 4.54%, rgba(0, 77, 255, 0.1) 34.2%, rgba(0, 77, 255, 0.2) 77.55%)",
+                "linear-gradient(152.92deg, rgba(0, 77, 255, 0.3) 4.54%, rgba(0, 77, 255, 0.2) 34.2%, rgba(0, 77, 255, 0.1) 77.55%)",
             }}
           />
         </div>
