@@ -131,13 +131,6 @@ const Feature = () => {
               چرا بیتفلر را انتخاب کنیم؟
             </h3>
           </div>
-          <div
-            className="absolute inset-0 max-w-xs mx-auto h-72 blur-[118px]"
-            style={{
-              background:
-                "linear-gradient(152.92deg, rgba(135, 206, 250, 0.2) 4.54%, rgba(70, 130, 180, 0.26) 34.2%, rgba(135, 206, 250, 0.1) 77.55%)",
-            }}
-          />
         </div>
         <div className="relative mt-12">
           <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

@@ -7,7 +7,7 @@ import { InfiniteMovingCards } from "../ui/InfiniteMovingCards";
 
 const Testimonial = () => {
   return (
-    <section className="py-14">
+    <section className="py-14 hidden md:block">
       <h3 className="text-gray-800 dark:text-gray-200 text-2xl font-semibold md:text-3xl text-center mb-8">
 
         نظرات مشتریان
