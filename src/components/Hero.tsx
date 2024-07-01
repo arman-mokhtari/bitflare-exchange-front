@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import ShimmerButton from "./ui/ShimmerButton";
@@ -8,7 +8,7 @@ import { AvatarGroup } from "./AvatarGroupe";
 
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36">
+    <div className="flex justify-center items-center h-screen">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
