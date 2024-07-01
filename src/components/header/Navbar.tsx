@@ -13,7 +13,7 @@ const dropdownNavs = [
       {
         title: "تحلیل‌ها",
         desc: "ابزارهای تحلیل داده",
-        path: "javascript:void(0)",
+        path: "/",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ const dropdownNavs = [
       {
         title: "گزارشات",
         desc: "ایجاد و مشاهده گزارشات",
-        path: "javascript:void(0)",
+        path: "/",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ const dropdownNavs = [
       {
         title: "وبلاگ",
         desc: "مطالب و مقالات جدید",
-        path: "javascript:void(0)",
+        path: "/",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ const dropdownNavs = [
       {
         title: "جامعه",
         desc: "ارتباط با کاربران",
-        path: "javascript:void(0)",
+        path: "/",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ const dropdownNavs = [
       {
         title: "درباره ما",
         desc: "اطلاعات درباره شرکت",
-        path: "javascript:void(0)",
+        path: "/",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +108,7 @@ const dropdownNavs = [
       {
         title: "فرصت‌های شغلی",
         desc: "همکاری با ما",
-        path: "javascript:void(0)",
+        path: "/",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -320,7 +320,7 @@ const Navbar = ({ className }: { className?: string }) => {
                 <ModeToggle />
                 <li>
                   <Link
-                    href="javascript:void(0)"
+                    href="/"
                     className="block py-3 text-center text-gray-700 dark:text-white hover:text-blue-600 border rounded-lg md:border-none"
                   >
                     ورود
@@ -328,7 +328,7 @@ const Navbar = ({ className }: { className?: string }) => {
                 </li>
                 <li>
                   <Link
-                    href="javascript:void(0)"
+                    href="/"
                     className="block py-3 px-4 font-medium text-center text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 active:shadow-none rounded-lg shadow md:inline"
                   >
                     ثبت نام

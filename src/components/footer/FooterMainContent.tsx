@@ -8,15 +8,15 @@ import { FaInstagram, FaTelegram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { footerNavs } from "@/data";
 
 const socialMediaLinks = [
-  { href: "javascript:void()", icon: <FaTwitter size={24} />, key: "twitter" },
+  { href: "/()", icon: <FaTwitter size={24} />, key: "twitter" },
   {
-    href: "javascript:void()",
+    href: "/()",
     icon: <FaInstagram size={24} />,
     key: "instagram",
   },
-  { href: "javascript:void()", icon: <FaYoutube size={24} />, key: "youtube" },
+  { href: "/()", icon: <FaYoutube size={24} />, key: "youtube" },
   {
-    href: "javascript:void()",
+    href: "/()",
     icon: <FaTelegram size={24} />,
     key: "telegram",
   },
@@ -25,7 +25,7 @@ const socialMediaLinks = [
 const Footer = () => {
   const year = currentPersianDate();
   return (
-    <footer className="text-gray-500 dark:text-gray-200  px-4 first-letter:mx-auto md:px-8">
+    <footer className="text-gray-500 dark:text-gray-200 px-4 first-letter:mx-auto md:px-8 mt-14">
       <div className="gap-6 justify-between md:flex">
         <div className="flex-1">
           <div className="max-w-xs">

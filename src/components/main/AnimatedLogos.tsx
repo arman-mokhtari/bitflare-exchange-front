@@ -29,7 +29,7 @@ const AnimatedLogos = () => {
                   <Image
                     key={key}
                     src={logo.img}
-                    className="size-12 md:size-20"
+                    className="size-12 md:size-20 rounded-full"
                     alt={`${logo.alt}`}
                     width={500}
                     title={`${logo.alt}`}
