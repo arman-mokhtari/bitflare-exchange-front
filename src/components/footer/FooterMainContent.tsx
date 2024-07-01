@@ -31,7 +31,8 @@ const Footer = () => {
           <div className="max-w-xs">
             <MainLogo />
             <p className="leading-relaxed mt-2 text-[15px]">
-            پلتفرم جامع خرید و فروش ارزهای دیجیتال در ایران. حفظ دارایی‌های مشتریان اولویت بیتفلر است.
+              پلتفرم جامع خرید و فروش ارزهای دیجیتال در ایران. حفظ دارایی‌های
+              مشتریان اولویت {process.env.NEXT_PUBLIC_SITE_NAME} است.
             </p>
           </div>
           <form onSubmit={(e) => e.preventDefault()}>
@@ -51,7 +52,9 @@ const Footer = () => {
         <div className="flex-1 mt-10 space-y-6 items-center justify-between sm:flex md:space-y-0 md:mt-0">
           {footerNavs.map((item, idx) => (
             <ul className="space-y-4" key={idx}>
-              <h4 className="text-gray-800 font-medium">{item.label}</h4>
+              <h4 className=" text-gray-800 dark:text-white font-bold text-lg">
+                {item.label}
+              </h4>
               {item.items.map((el, idx) => (
                 <li key={idx}>
                   <Link href={el.href} className=" hover:text-blue-600">
