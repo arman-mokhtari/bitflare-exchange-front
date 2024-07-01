@@ -127,19 +127,19 @@ export const footerNavs = [
     label: "شرکت",
     items: [
       {
-        href: "javascript:void()",
+        href: "/()",
         name: "شرکا",
       },
       {
-        href: "javascript:void()",
+        href: "/()",
         name: "وبلاگ",
       },
       {
-        href: "javascript:void()",
+        href: "/()",
         name: "تیم",
       },
       {
-        href: "javascript:void()",
+        href: "/()",
         name: "مشاغل",
       },
     ],
@@ -148,19 +148,19 @@ export const footerNavs = [
     label: "منابع",
     items: [
       {
-        href: "javascript:void()",
+        href: "/()",
         name: "تماس",
       },
       {
-        href: "javascript:void()",
+        href: "/()",
         name: "پشتیبانی",
       },
       {
-        href: "javascript:void()",
+        href: "/()",
         name: "مستندات",
       },
       {
-        href: "javascript:void()",
+        href: "/()",
         name: "قیمت‌گذاری",
       },
     ],
@@ -169,19 +169,19 @@ export const footerNavs = [
     label: "درباره",
     items: [
       {
-        href: "javascript:void()",
+        href: "/()",
         name: "شرایط",
       },
       {
-        href: "javascript:void()",
+        href: "/()",
         name: "مجوز",
       },
       {
-        href: "javascript:void()",
+        href: "/()",
         name: "حریم خصوصی",
       },
       {
-        href: "javascript:void()",
+        href: "/()",
         name: "درباره ما",
       },
     ],
@@ -225,3 +225,37 @@ export const techStack = [
     alt: "Clerk",
   },
 ];
+
+export const testimonials = [
+  {
+    quote:
+      "استفاده از بیتفلر خیلی آسونه و پشتیبانی شون هم همیشه کمک میکنه. من واقعا راضیم!",
+    name: "علی حسینی",
+    title: "معامله‌گر حرفه‌ای",
+  },
+  {
+    quote:
+      "سرعت تراکنش‌ها فوق‌العاده‌س و کارمزدها هم منصفانه. پیشنهادش میکنم به همه.",
+    name: "زهرا رضایی",
+    title: "سرمایه‌گذار",
+  },
+  {
+    quote:
+      "بیتفلر یه صرافی امن و مطمئنه. از وقتی باهاش کار میکنم دیگه نگران دارایی‌هام نیستم.",
+    name: "محمد امیری",
+    title: "کارآفرین",
+  },
+  {
+    quote:
+      "اپلیکیشن موبایل بیتفلر خیلی کاربرپسنده و راحت میشه ازش استفاده کرد. خیلی راضی‌ام.",
+    name: "فاطمه کریمی",
+    title: "کاربر عادی",
+  },
+  {
+    quote:
+      "تیم پشتیبانی بیتفلر واقعا حرفه‌ای هستن و همیشه به سوالاتم با دقت جواب میدن.",
+    name: "سینا مرادی",
+    title: "تحلیل‌گر بازار",
+  },
+];
+
