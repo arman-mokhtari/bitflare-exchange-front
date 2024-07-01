@@ -31,8 +31,8 @@ const Footer = () => {
           <div className="max-w-xs">
             <MainLogo />
             <p className="leading-relaxed mt-2 text-[15px]">
-              پلتفرم جامع خرید و فروش ارزهای دیجیتال در ایران. حفظ دارایی‌های
-              مشتریان اولویت {process.env.NEXT_PUBLIC_SITE_NAME} است.
+            {process.env.NEXT_PUBLIC_SITE_NAME} مرکز جامع خرید و فروش ارزهای دیجیتال. حفظ دارایی‌های
+              مشتریان اولویت ما است.
             </p>
           </div>
           <form onSubmit={(e) => e.preventDefault()}>
