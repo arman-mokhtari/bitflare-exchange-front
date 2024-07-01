@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
           </form>
         </div>
-        <div className="flex-1 mt-10 space-y-6 items-center justify-between sm:flex md:space-y-0 md:mt-0">
+        <div className="flex-1 mt-10 items-center justify-between sm:flex md:mt-0 grid grid-cols-3 sm:gap-0">
           {footerNavs.map((item, idx) => (
             <ul className="space-y-4" key={idx}>
               <h4 className=" text-gray-800 dark:text-white font-bold text-lg">
@@ -66,22 +66,26 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="mt-8 py-3 border-t items-center justify-between sm:flex">
-        <div className="mt-4 sm:mt-0">
-          تمامی حقوق برای سایت{" "}
-          <Link
-            role="link"
-            aria-label="وبسایت ورکفولیو"
-            title="وبسایت ورکفولیو"
-            href="/"
-            className="hover:text-blue-600"
-          >
-            {process.env.NEXT_PUBLIC_SITE_NAME}
-          </Link>{" "}
-          محفوظ است. کپی‌رایت © {year}
+      <div className="flex flex-col md:flex-row justify-center md:justify-between items-center mt-8 py-3 border-t gap-2">
+        <div className="flex flex-row gap-1 text-xs sm:text-sm">
+          <div>
+            تمامی حقوق برای سایت{" "}
+            <Link
+              role="link"
+              aria-label="وبسایت ورکفولیو"
+              title="وبسایت ورکفولیو"
+              href="/"
+              className="hover:text-blue-600"
+            >
+              {process.env.NEXT_PUBLIC_SITE_NAME}
+            </Link>{" "}
+            محفوظ است.
+          </div>
+          <p>کپی‌رایت © {year}</p>
         </div>
-        <div className="mt-6 sm:mt-0">
-          <ul className="flex items-center gap-2">
+
+        <div className="">
+          <ul className="flex items-end gap-2">
             {socialMediaLinks.map(({ href, icon, key }) => (
               <li
                 key={key}
