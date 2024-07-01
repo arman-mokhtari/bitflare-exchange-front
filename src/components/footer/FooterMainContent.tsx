@@ -43,7 +43,7 @@ const Footer = () => {
                 placeholder="ایمیل خود را وارد کنید"
                 className="w-full p-2.5 outline-none"
               />
-              <button className="p-2.5 rounded-md text-white bg-indigo-600 outline-none shadow-md focus:shadow-none sm:px-5 whitespace-nowrap">
+              <button className="p-2.5 rounded-md text-white bg-blue-600 outline-none shadow-md focus:shadow-none sm:px-5 whitespace-nowrap">
                 ثبت نام
               </button>
             </div>

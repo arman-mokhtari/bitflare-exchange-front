@@ -8,11 +8,11 @@ import MainLogo from "../common/MainLogo";
 
 const dropdownNavs = [
   {
-    label: "Products",
+    label: "محصولات",
     navs: [
       {
-        title: "Analytics",
-        desc: "Duis aute irure dolor in reprehenderit",
+        title: "تحلیل‌ها",
+        desc: "ابزارهای تحلیل داده",
         path: "javascript:void(0)",
         icon: (
           <svg
@@ -32,8 +32,8 @@ const dropdownNavs = [
         ),
       },
       {
-        title: "Reports",
-        desc: "Duis aute irure dolor in reprehenderit",
+        title: "گزارشات",
+        desc: "ایجاد و مشاهده گزارشات",
         path: "javascript:void(0)",
         icon: (
           <svg
@@ -49,11 +49,11 @@ const dropdownNavs = [
     ],
   },
   {
-    label: "Resources",
+    label: "منابع",
     navs: [
       {
-        title: "Blog",
-        desc: "Duis aute irure dolor in reprehenderit",
+        title: "وبلاگ",
+        desc: "مطالب و مقالات جدید",
         path: "javascript:void(0)",
         icon: (
           <svg
@@ -67,8 +67,8 @@ const dropdownNavs = [
         ),
       },
       {
-        title: "Community",
-        desc: "Duis aute irure dolor in reprehenderit",
+        title: "جامعه",
+        desc: "ارتباط با کاربران",
         path: "javascript:void(0)",
         icon: (
           <svg
@@ -84,11 +84,11 @@ const dropdownNavs = [
     ],
   },
   {
-    label: "Company",
+    label: "شرکت",
     navs: [
       {
-        title: "About us",
-        desc: "Duis aute irure dolor in reprehenderit",
+        title: "درباره ما",
+        desc: "اطلاعات درباره شرکت",
         path: "javascript:void(0)",
         icon: (
           <svg
@@ -106,8 +106,8 @@ const dropdownNavs = [
         ),
       },
       {
-        title: "Careers",
-        desc: "Duis aute irure dolor in reprehenderit",
+        title: "فرصت‌های شغلی",
+        desc: "همکاری با ما",
         path: "javascript:void(0)",
         icon: (
           <svg
@@ -128,6 +128,7 @@ const dropdownNavs = [
     ],
   },
 ];
+
 
 interface DrapdownState {
   idx: number | null;
@@ -228,7 +229,7 @@ const Navbar = ({ className }: { className?: string }) => {
                     {item.isDrapdown ? (
                       <div className="md:mr-6">
                         <button
-                          className="w-full flex items-center justify-between gap-1 text-gray-700 dark:text-white hover:text-indigo-600"
+                          className="w-full flex items-center justify-between gap-1 text-gray-700 dark:text-white hover:text-blue-600"
                           onClick={() =>
                             setDrapdownState({
                               idx,
@@ -270,7 +271,7 @@ const Navbar = ({ className }: { className?: string }) => {
                     ) : (
                       <Link
                         href={item.path}
-                        className="block text-gray-700 dark:text-white hover:text-indigo-600"
+                        className="block text-gray-700 dark:text-white hover:text-blue-600"
                       >
                         {item.title}
                       </Link>
@@ -282,7 +283,7 @@ const Navbar = ({ className }: { className?: string }) => {
                         <ul className="max-w-screen-xl mx-auto grid items-center gap-6 md:p-8 md:grid-cols-2 lg:grid-cols-3">
                           {item?.navs?.map((dropdownItem, idx) => (
                             <li key={idx}>
-                              <p className="text-indigo-600 text-sm">
+                              <p className="text-blue-600 dark:text-blue-300 text-sm">
                                 {dropdownItem.label}
                               </p>
                               <ul className="mt-5 space-y-6">
@@ -292,11 +293,11 @@ const Navbar = ({ className }: { className?: string }) => {
                                       href={navItem.path}
                                       className="flex gap-3 items-center"
                                     >
-                                      <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center duration-150 group-hover:bg-indigo-600 group-hover:text-white md:w-14 md:h-14">
+                                      <div className="w-12 h-12 rounded-full bg-blue-50 dark:bg-blue-100 text-blue-600 flex items-center justify-center duration-150 group-hover:bg-blue-600 group-hover:text-white md:w-14 md:h-14">
                                         {navItem.icon}
                                       </div>
                                       <div>
-                                        <span className="text-gray-800 dark:text-white duration-200 group-hover:text-indigo-600 text-sm font-medium md:text-base">
+                                        <span className="text-gray-800 dark:text-white duration-200 group-hover:text-blue-600 text-sm font-medium md:text-base">
                                           {navItem.title}
                                         </span>
                                         <p className="text-sm text-gray-600 dark:text-white-200 group-hover:text-gray-800 dark:group-hover:text-white mt-1">
@@ -323,7 +324,7 @@ const Navbar = ({ className }: { className?: string }) => {
                 <li>
                   <Link
                     href="javascript:void(0)"
-                    className="block py-3 text-center text-gray-700 dark:text-white hover:text-indigo-600 border rounded-lg md:border-none"
+                    className="block py-3 text-center text-gray-700 dark:text-white hover:text-blue-600 border rounded-lg md:border-none"
                   >
                     ورود
                   </Link>
