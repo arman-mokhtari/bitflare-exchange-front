@@ -1,10 +1,10 @@
 // "use client"
-import { Spotlight } from "./ui/Spotlight";
-import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import ShimmerButton from "./ui/ShimmerButton";
+import { Spotlight } from "../ui/Spotlight";
+import { TextGenerateEffect } from "../ui/TextGenerateEffect";
+import ShimmerButton from "../ui/ShimmerButton";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
-import { AvatarGroup } from "./AvatarGroupe";
+import { AvatarGroup } from "../common/AvatarGroupe";
 
 const Hero = () => {
   return (
@@ -21,7 +21,7 @@ const Hero = () => {
         <Spotlight className="left-80 top-28 h-[60vh] w-[50vw] contrast-[0.3]" fill="blue" />
       </div>
       <div
-        className="h-screen w-full dark:bg-background bg-white-50 dark:bg-grid-white/[0.02] bg-grid-black-100/[0.03]
+        className="h-screen w-full dark:bg-background bg-white-50 dark:bg-grid-white/[0.04] bg-grid-black-100/[0.03]
        absolute top-0 left-0 flex items-center justify-center"
       >
         <div

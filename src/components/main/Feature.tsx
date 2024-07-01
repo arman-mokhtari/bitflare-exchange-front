@@ -125,7 +125,7 @@ const Feature = () => {
   return (
     <section className="py-14">
       <div className="text-gray-600">
-        <div className="relative max-w-2xl mx-auto sm:text-center">
+        <div className="relative max-w-2xl mx-auto text-center">
           <div className="relative z-10">
             <h3 className="text-gray-800 dark:text-gray-200 text-2xl font-semibold md:text-3xl">
               چرا بیتفلر را انتخاب کنیم؟
