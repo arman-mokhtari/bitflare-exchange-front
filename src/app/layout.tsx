@@ -3,7 +3,7 @@ import { Inter, Vazirmatn } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/main/Navbar";
+import Navbar from "@/components/header/Navbar";
 
 const vazir = Vazirmatn({
   subsets: ["arabic"],

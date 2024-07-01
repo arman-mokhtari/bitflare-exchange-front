@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "./ModeToggle";
-import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
+import MainLogo from "../common/MainLogo";
 
 const dropdownNavs = [
   {
@@ -150,24 +149,7 @@ const Navbar = ({ className }: { className?: string }) => {
     };
   }, []);
 
-  // use theme for ternary operator
-  const { theme, resolvedTheme } = useTheme();
-
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
-  const logoSrc =
-    theme === "dark" || resolvedTheme === "dark"
-      ? "/assets/images/logos/logo-dark.png"
-      : "/assets/images/logos/logo-light.png";
-  // use theme for ternary operator End
+  
 
   const navigation = [
     { title: "خانه", path: "/", isDrapdown: false },
@@ -198,14 +180,7 @@ const Navbar = ({ className }: { className?: string }) => {
       >
         <div className="items-center gap-x-14 px-4 max-w-screen-xl mx-auto md:flex md:px-8">
           <div className="flex items-center justify-between py-3 md:py-3 md:block">
-            <Link href="/">
-              <Image
-                src={logoSrc}
-                width={120}
-                height={50}
-                alt="Float UI logo"
-              />
-            </Link>
+            <MainLogo />
             <div className="md:hidden">
               <button
                 className="text-gray-500 hover:text-gray-800"

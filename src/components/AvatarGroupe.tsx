@@ -37,7 +37,7 @@ export function AvatarGroup() {
           return (
             <Avatar
               key={idx}
-              className="bg-white border-2 border-white size-10 md:size-14 flex items-center justify-center overflow-hidden rounded-full"
+              className="bg-white border-2 border-white size-10 md:size-14 flex items-center justify-center overflow-hidden rounded-full hover:translate-y-1 my-2 z-50"
             >
               <AvatarImage
                 src={item.imgURL}
@@ -47,7 +47,7 @@ export function AvatarGroup() {
             </Avatar>
           );
         })}
-        <div className="flex items-center justify-center size-10 md:size-14 rounded-full border-2 border-white  bg-blue-700 text-white text-xs font-medium">
+        <div className="flex items-center justify-center size-10 md:size-14 rounded-full border-2 border-white  bg-blue-700 text-white text-xs font-medium hover:translate-y-1">
           +10000
         </div>
         <div className="hidden md:block">
