@@ -148,7 +148,7 @@ const Feature = () => {
                   idx > 2 ? "hidden sm:block" : ""
                 } space-y-3 p-4 border rounded-lg hover:shadow-xl transition duration-200 shadow-input dark:shadow-none`}
               >
-                <div className="text-indigo-600 pb-3">{item.icon}</div>
+                <div className="text-blue-600 pb-3">{item.icon}</div>
                 <h4 className="text-lg text-gray-800 dark:text-gray-200 font-semibold">
                   {item.title}
                 </h4>
