@@ -10,11 +10,13 @@ const Ceo = () => {
             <MainLogo otherClasses="mx-auto" />
           </div>
           <figure>
-          <blockquote>
-  <p className="text-gray-800 dark:text-gray-200 text-sm font-semibold sm:text-xl">
-    “بیتفلر با هدف ارائه خدمات برتر و امنیت بی‌نظیر به کاربران، همواره در تلاش است تا بهترین تجربه معاملاتی را فراهم کند. ما به آینده‌ای روشن و موفق در کنار کاربرانمان باور داریم.“
-  </p>
-</blockquote>
+            <blockquote>
+              <p className="text-gray-800 dark:text-gray-200 text-sm font-semibold sm:text-xl">
+                “بیتفلر با هدف ارائه خدمات برتر و امنیت بی‌نظیر به کاربران،
+                همواره در تلاش است تا بهترین تجربه معاملاتی را فراهم کند. ما به
+                آینده‌ای روشن و موفق در کنار کاربرانمان باور داریم.“
+              </p>
+            </blockquote>
 
             <div className="mt-6">
               <Image
