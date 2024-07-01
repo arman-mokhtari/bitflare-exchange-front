@@ -7,14 +7,16 @@ import Testimonial from "@/components/main/Testimonial";
 
 const page = () => {
   return (
-    <div className="relative flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-2">
-      <div className="md:max-w-screen-xl w-full relative">
+    <div className="relative flex justify-center items-center flex-col overflow-hidden">
+      <div className="w-full relative">
         <Hero />
-        <AnimatedLogos />
-        <CoinsTable />
-        <Feature />
-        <Testimonial />
-        <Ceo />
+        <div className="md:max-w-screen-xl px-2 mx-auto">
+          <AnimatedLogos />
+          <CoinsTable />
+          <Feature />
+          <Testimonial />
+          <Ceo />
+        </div>
       </div>
     </div>
   );
