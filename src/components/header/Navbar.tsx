@@ -129,7 +129,6 @@ const dropdownNavs = [
   },
 ];
 
-
 interface DrapdownState {
   idx: number | null;
   isActive: boolean;
@@ -149,8 +148,6 @@ const Navbar = ({ className }: { className?: string }) => {
         setDrapdownState({ isActive: false, idx: null });
     };
   }, []);
-
-  
 
   const navigation = [
     { title: "خانه", path: "/", isDrapdown: false },
