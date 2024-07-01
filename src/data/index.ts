@@ -119,3 +119,69 @@ export const gridItems = [
     },
   ];
   export const headers = ["بازار", "آخرین قیمت", "تغییرات 24 ساعته",""];
+
+  export const footerNavs = [
+    {
+      label: "شرکت",
+      items: [
+        {
+          href: "javascript:void()",
+          name: "شرکا",
+        },
+        {
+          href: "javascript:void()",
+          name: "وبلاگ",
+        },
+        {
+          href: "javascript:void()",
+          name: "تیم",
+        },
+        {
+          href: "javascript:void()",
+          name: "مشاغل",
+        },
+      ],
+    },
+    {
+      label: "منابع",
+      items: [
+        {
+          href: "javascript:void()",
+          name: "تماس",
+        },
+        {
+          href: "javascript:void()",
+          name: "پشتیبانی",
+        },
+        {
+          href: "javascript:void()",
+          name: "مستندات",
+        },
+        {
+          href: "javascript:void()",
+          name: "قیمت‌گذاری",
+        },
+      ],
+    },
+    {
+      label: "درباره",
+      items: [
+        {
+          href: "javascript:void()",
+          name: "شرایط",
+        },
+        {
+          href: "javascript:void()",
+          name: "مجوز",
+        },
+        {
+          href: "javascript:void()",
+          name: "حریم خصوصی",
+        },
+        {
+          href: "javascript:void()",
+          name: "درباره ما",
+        },
+      ],
+    },
+  ];

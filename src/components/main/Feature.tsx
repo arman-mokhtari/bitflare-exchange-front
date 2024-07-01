@@ -56,7 +56,7 @@ const features = [
         />
       </svg>
     ),
-    title:"کیف پول اختصاصی + ۹۰ شبکه بلاکچینی" ,
+    title: "کیف پول اختصاصی + ۹۰ شبکه بلاکچینی",
     desc: "واریز، برداشت و نگهداری از ۱۰۰۰+ ارز دیجیتال در کیف پول رابکس روی بیش از ۹۰ شبکه بلاکچینی وجود دارد!",
   },
   {
@@ -96,7 +96,7 @@ const features = [
         />
       </svg>
     ),
-    title:"امنیت کامل و پایدار" ,
+    title: "امنیت کامل و پایدار",
     desc: "بالاترین سطح امنیت برای حفاظت از دارایی‌های شما، با استفاده از تکنولوژی‌های پیشرفته و پروتکل‌های امنیتی.",
   },
   {
@@ -128,13 +128,14 @@ const Feature = () => {
         <div className="relative max-w-2xl mx-auto sm:text-center">
           <div className="relative z-10">
             <h3 className="text-gray-800 dark:text-gray-200 text-2xl font-semibold md:text-3xl">
-            چرا بیتفلر را انتخاب کنیم؟
+              چرا بیتفلر را انتخاب کنیم؟
             </h3>
           </div>
           <div
             className="absolute inset-0 max-w-xs mx-auto h-72 blur-[118px]"
             style={{
-              background: "linear-gradient(152.92deg, rgba(135, 206, 250, 0.2) 4.54%, rgba(70, 130, 180, 0.26) 34.2%, rgba(135, 206, 250, 0.1) 77.55%)",
+              background:
+                "linear-gradient(152.92deg, rgba(135, 206, 250, 0.2) 4.54%, rgba(70, 130, 180, 0.26) 34.2%, rgba(135, 206, 250, 0.1) 77.55%)",
             }}
           />
         </div>
@@ -143,7 +144,9 @@ const Feature = () => {
             {features.map((item, idx) => (
               <li
                 key={idx}
-                className="space-y-3 p-4 border rounded-lg hover:shadow-xl transition duration-200 shadow-input dark:shadow-none"
+                className={`${
+                  idx > 2 ? "hidden sm:block" : ""
+                } space-y-3 p-4 border rounded-lg hover:shadow-xl transition duration-200 shadow-input dark:shadow-none`}
               >
                 <div className="text-indigo-600 pb-3">{item.icon}</div>
                 <h4 className="text-lg text-gray-800 dark:text-gray-200 font-semibold">

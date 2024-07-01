@@ -25,14 +25,14 @@ export default function CoinsTable() {
         </div>
 
         <div className="overflow-hidden rtl">
-          <Table className="">
+          <Table className="overflow-hidden">
             <TableHeader>
               <TableRow className="!border-b-[12px] border-background">
                 {headers.map((header, index) => (
                   <TableHead
                     key={index}
-                    className={`text-right text-gray-800 dark:text-gray-200 ${
-                      index === 0 ? "hidden md:table-cell" : ""
+                    className={`text-right text-gray-800 dark:text-gray-200 whitespace-nowrap ${
+                      index === 2 ? "hidden md:table-cell" : ""
                     }`}
                   >
                     {header}
