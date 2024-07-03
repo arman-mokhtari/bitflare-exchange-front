@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 "use client";
 
 import Link from "next/link";
@@ -88,8 +89,8 @@ const dropdownNavs = [
     navs: [
       {
         title: "درباره ما",
-        desc: "اطلاعات درباره شرکت",
-        path: "/",
+        desc: "اطلاعات درباره بیتفلر",
+        path: "/about",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +216,7 @@ const Navbar = ({ className }: { className?: string }) => {
             </div>
           </div>
           <div
-            className={`mt-8 flex-1 pb-3 md:mt-0 md:block md:pb-0 ${
+            className={`nav-menu mt-8 flex-1 pb-3 md:mt-0 md:block md:pb-0 ${
               state ? "block" : "hidden"
             }`}
           >
