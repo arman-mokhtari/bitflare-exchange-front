@@ -1,5 +1,6 @@
 import Footer from "@/components/footer/FooterMainContent";
 import "../globals.css";
+import React from "react";
 
 export default function RootLayout({
   children,
@@ -8,8 +9,10 @@ export default function RootLayout({
 }>) {
   return (
     <div>
-      {children}
-      <Footer />
+      <div className="min-h-screen">{children}</div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

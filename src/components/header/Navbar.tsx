@@ -21,7 +21,7 @@ const dropdownNavs = [
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="size-6"
           >
             <path
               strokeLinecap="round"
@@ -40,7 +40,7 @@ const dropdownNavs = [
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-6 h-6"
+            className="size-6"
           >
             <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z" />
           </svg>
@@ -60,7 +60,7 @@ const dropdownNavs = [
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-6 h-6"
+            className="size-6"
           >
             <path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" />
           </svg>
@@ -75,7 +75,7 @@ const dropdownNavs = [
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-6 h-6"
+            className="size-6"
           >
             <path d="M21.721 12.752a9.711 9.711 0 00-.945-5.003 12.754 12.754 0 01-4.339 2.708 18.991 18.991 0 01-.214 4.772 17.165 17.165 0 005.498-2.477zM14.634 15.55a17.324 17.324 0 00.332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 00.332 4.647 17.385 17.385 0 005.268 0zM9.772 17.119a18.963 18.963 0 004.456 0A17.182 17.182 0 0112 21.724a17.18 17.18 0 01-2.228-4.605zM7.777 15.23a18.87 18.87 0 01-.214-4.774 12.753 12.753 0 01-4.34-2.708 9.711 9.711 0 00-.944 5.004 17.165 17.165 0 005.498 2.477zM21.356 14.752a9.765 9.765 0 01-7.478 6.817 18.64 18.64 0 001.988-4.718 18.627 18.627 0 005.49-2.098zM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 001.988 4.718 9.765 9.765 0 01-7.478-6.816zM13.878 2.43a9.755 9.755 0 016.116 3.986 11.267 11.267 0 01-3.746 2.504 18.63 18.63 0 00-2.37-6.49zM12 2.276a17.152 17.152 0 012.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0112 2.276zM10.122 2.43a18.629 18.629 0 00-2.37 6.49 11.266 11.266 0 01-3.746-2.504 9.754 9.754 0 016.116-3.985z" />
           </svg>
@@ -95,7 +95,7 @@ const dropdownNavs = [
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-6 h-6"
+            className="size-6"
           >
             <path
               fillRule="evenodd"
@@ -114,7 +114,7 @@ const dropdownNavs = [
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-6 h-6"
+            className="size-6"
           >
             <path
               fillRule="evenodd"
@@ -170,14 +170,14 @@ const Navbar = ({ className }: { className?: string }) => {
       )}
     >
       <nav
-        className={`relative z-20 w-full md:static md:bg-transparent md:text-sm md:border-none ${
+        className={`relative z-20 w-full md:static md:border-none md:bg-transparent md:text-sm ${
           state
-            ? "shadow-lg rounded-b-xl md:shadow-none bg-white dark:bg-black-100"
+            ? "rounded-b-xl bg-white shadow-lg dark:bg-black-100 md:shadow-none"
             : ""
         }`}
       >
-        <div className="items-center gap-x-14 px-4 max-w-screen-xl mx-auto md:flex md:px-8">
-          <div className="flex items-center justify-between py-3 md:py-3 md:block">
+        <div className="mx-auto max-w-screen-xl items-center gap-x-14 px-4 md:flex md:px-8">
+          <div className="flex items-center justify-between py-3 md:block md:py-3">
             <MainLogo />
             <div className="md:hidden">
               <button
@@ -187,7 +187,7 @@ const Navbar = ({ className }: { className?: string }) => {
                 {state ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
+                    className="size-6"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -202,7 +202,7 @@ const Navbar = ({ className }: { className?: string }) => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    className="w-6 h-6"
+                    className="size-6"
                   >
                     <path
                       fillRule="evenodd"
@@ -215,7 +215,7 @@ const Navbar = ({ className }: { className?: string }) => {
             </div>
           </div>
           <div
-            className={`nav-menu flex-1 pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+            className={`mt-8 flex-1 pb-3 md:mt-0 md:block md:pb-0 ${
               state ? "block" : "hidden"
             }`}
           >
@@ -226,7 +226,7 @@ const Navbar = ({ className }: { className?: string }) => {
                     {item.isDrapdown ? (
                       <div className="md:mr-6">
                         <button
-                          className="w-full flex items-center justify-between gap-1 text-gray-700 dark:text-white hover:text-blue-600"
+                          className="flex w-full items-center justify-between gap-1 text-gray-700 hover:text-blue-600 dark:text-white"
                           onClick={() =>
                             setDrapdownState({
                               idx,
@@ -235,13 +235,13 @@ const Navbar = ({ className }: { className?: string }) => {
                           }
                         >
                           {item.title}
-                          {drapdownState.idx == idx &&
+                          {drapdownState.idx === idx &&
                           drapdownState.isActive ? (
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 20 20"
                               fill="currentColor"
-                              className="w-5 h-5"
+                              className="size-5"
                             >
                               <path
                                 fillRule="evenodd"
@@ -254,7 +254,7 @@ const Navbar = ({ className }: { className?: string }) => {
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 20 20"
                               fill="currentColor"
-                              className="w-5 h-5"
+                              className="size-5"
                             >
                               <path
                                 fillRule="evenodd"
@@ -268,19 +268,19 @@ const Navbar = ({ className }: { className?: string }) => {
                     ) : (
                       <Link
                         href={item.path}
-                        className="block text-gray-700 dark:text-white hover:text-blue-600"
+                        className="block text-gray-700 hover:text-blue-600 dark:text-white"
                       >
                         {item.title}
                       </Link>
                     )}
                     {item.isDrapdown &&
-                    drapdownState.idx == idx &&
+                    drapdownState.idx === idx &&
                     drapdownState.isActive ? (
-                      <div className="mt-6 bg-white dark:bg-black-100 inset-x-0 top-20 w-full md:absolute md:border-y md:shadow-md md:mt-0">
-                        <ul className="max-w-screen-xl mx-auto grid items-center gap-6 md:p-8 md:grid-cols-2 lg:grid-cols-3">
+                      <div className="inset-x-0 top-20 mt-6 w-full bg-white dark:bg-black-100 md:absolute md:mt-0 md:border-y md:shadow-md">
+                        <ul className="mx-auto grid max-w-screen-xl items-center gap-6 md:grid-cols-2 md:p-8 lg:grid-cols-3">
                           {item?.navs?.map((dropdownItem, idx) => (
                             <li key={idx}>
-                              <p className="text-blue-600 dark:text-blue-300 text-sm">
+                              <p className="text-sm text-blue-600 dark:text-blue-300">
                                 {dropdownItem.label}
                               </p>
                               <ul className="mt-5 space-y-6">
@@ -288,16 +288,16 @@ const Navbar = ({ className }: { className?: string }) => {
                                   <li key={idx} className="group">
                                     <a
                                       href={navItem.path}
-                                      className="flex gap-3 items-center"
+                                      className="flex items-center gap-3"
                                     >
-                                      <div className="w-12 h-12 rounded-full bg-blue-50 dark:bg-blue-100 text-blue-600 flex items-center justify-center duration-150 group-hover:bg-blue-600 group-hover:text-white md:w-14 md:h-14">
+                                      <div className="flex size-12 items-center justify-center rounded-full bg-blue-50 text-blue-600 duration-150 group-hover:bg-blue-600 group-hover:text-white dark:bg-blue-100 md:size-14">
                                         {navItem.icon}
                                       </div>
                                       <div>
-                                        <span className="text-gray-800 dark:text-white duration-200 group-hover:text-blue-600 text-sm font-medium md:text-base">
+                                        <span className="text-sm font-medium text-gray-800 duration-200 group-hover:text-blue-600 dark:text-white md:text-base">
                                           {navItem.title}
                                         </span>
-                                        <p className="text-sm text-gray-600 dark:text-white-200 group-hover:text-gray-800 dark:group-hover:text-white mt-1">
+                                        <p className="mt-1 text-sm text-gray-600 group-hover:text-gray-800 dark:text-white-200 dark:group-hover:text-white">
                                           {navItem.desc}
                                         </p>
                                       </div>
@@ -321,15 +321,15 @@ const Navbar = ({ className }: { className?: string }) => {
                 <li>
                   <Link
                     href="/"
-                    className="block py-3 text-center text-gray-700 dark:text-white hover:text-blue-600 border rounded-lg md:border-none"
+                    className="block rounded-lg border py-3 text-center text-gray-700 hover:text-blue-600 dark:text-white md:border-none"
                   >
                     ورود
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/"
-                    className="block py-3 px-4 font-medium text-center text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 active:shadow-none rounded-lg shadow md:inline"
+                    href="/auth"
+                    className="block rounded-lg bg-blue-600 px-4 py-3 text-center font-medium text-white shadow hover:bg-blue-700 active:bg-blue-800 active:shadow-none md:inline"
                   >
                     ثبت نام
                   </Link>
@@ -341,7 +341,7 @@ const Navbar = ({ className }: { className?: string }) => {
       </nav>
       {state ? (
         <div
-          className="z-10 fixed top-0 w-screen h-screen bg-black/20 backdrop-blur-sm md:hidden"
+          className="fixed top-0 z-10 h-screen w-screen bg-black/20 backdrop-blur-sm md:hidden"
           onClick={() => setState(false)}
         ></div>
       ) : (

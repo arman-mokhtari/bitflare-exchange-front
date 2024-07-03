@@ -7,17 +7,15 @@ import { InfiniteMovingCards } from "../ui/InfiniteMovingCards";
 
 const Testimonial = () => {
   return (
-    <section className="py-14 hidden md:block">
-      <h3 className="text-gray-800 dark:text-gray-200 text-2xl font-semibold md:text-3xl text-center mb-8">
-
-        نظرات مشتریان
-        {" "}<span className="text-blue-600">بیتفلر</span>
+    <section className="hidden py-14 md:block">
+      <h3 className="mb-8 text-center text-2xl font-semibold text-gray-800 dark:text-gray-200 md:text-3xl">
+        نظرات مشتریان <span className="text-blue-600">بیتفلر</span>
       </h3>
 
       <div className="flex flex-col items-center">
         <div
           dir="ltr"
-          className="rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden"
+          className="relative flex flex-col items-center  justify-center overflow-hidden rounded-md antialiased"
         >
           <InfiniteMovingCards
             items={testimonials}

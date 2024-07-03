@@ -8,31 +8,34 @@ import { AvatarGroup } from "../common/AvatarGroupe";
 
 const Hero = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex h-screen items-center justify-center">
       <div>
         <Spotlight
-          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+          className="-left-10 -top-40 h-screen md:-left-32 md:-top-20"
           fill="gray"
         />
         <Spotlight
-          className="h-[80vh] w-[50vw] top-10 left-full"
+          className="left-full top-10 h-[80vh] w-[50vw]"
           fill="purple"
         />
-        <Spotlight className="left-80 top-28 h-[60vh] w-[50vw] contrast-[0.3]" fill="blue" />
+        <Spotlight
+          className="left-80 top-28 h-[60vh] w-[50vw] contrast-[0.3]"
+          fill="blue"
+        />
       </div>
       <div
-        className="h-screen w-full dark:bg-background bg-white-50 dark:bg-grid-white/[0.04] bg-grid-black-100/[0.03]
-       absolute top-0 left-0 flex items-center justify-center"
+        className="absolute left-0 top-0 flex h-screen w-full
+       items-center justify-center bg-white-50 bg-grid-black-100/[0.03] dark:bg-background dark:bg-grid-white/[0.06]"
       >
         <div
-          className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-background
-         bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
+          className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white
+         [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-background"
         />
       </div>
 
-      <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs font-bold text-center text-slate-600 dark:text-white max-w-80">
+      <div className="relative z-10 my-20 flex justify-center">
+        <div className="flex max-w-[89vw] flex-col items-center justify-center md:max-w-2xl lg:max-w-[60vw]">
+          <p className="max-w-80 text-center text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-white">
             تجربه‌ای بی‌نظیر از سرمایه‌گذاری مدرن
           </p>
           <TextGenerateEffect

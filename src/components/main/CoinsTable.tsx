@@ -15,23 +15,23 @@ export default function CoinsTable() {
     <section className="py-14">
       <div className="text-gray-600">
         <div className="">
-          <h3 className="text-gray-800 dark:text-gray-200 text-2xl font-semibold md:text-3xl text-center">
+          <h3 className="text-center text-2xl font-semibold text-gray-800 dark:text-gray-200 md:text-3xl">
             قیمت لحظه ای ارزهای دیجیتال
           </h3>
 
-          <p className="text-gray-600 dark:text-gray-200 my-2">
+          <p className="my-2 text-gray-600 dark:text-gray-200">
             منطبق بر بازار‌های جهانی
           </p>
         </div>
 
-        <div className="overflow-hidden rtl">
+        <div className="rtl overflow-hidden">
           <Table className="overflow-hidden">
             <TableHeader>
               <TableRow className="!border-b-[12px] border-background">
                 {headers.map((header, index) => (
                   <TableHead
                     key={index}
-                    className={`text-right text-gray-800 dark:text-gray-200 whitespace-nowrap ${
+                    className={`whitespace-nowrap text-right text-gray-800 dark:text-gray-200 ${
                       index === 2 ? "hidden md:table-cell" : ""
                     }`}
                   >
@@ -46,18 +46,18 @@ export default function CoinsTable() {
                   className="!border-b-[12px] border-background "
                   key={index}
                 >
-                  <TableCell className="font-medium whitespace-nowrap text-gray-800 dark:text-gray-200">
+                  <TableCell className="whitespace-nowrap font-medium text-gray-800 dark:text-gray-200">
                     {coin.name}
                   </TableCell>
                   <TableCell className="whitespace-nowrap text-gray-800 dark:text-gray-200">
                     {coin.price}
                   </TableCell>
-                  <TableCell className="hidden md:table-cell whitespace-nowrap">
+                  <TableCell className="hidden whitespace-nowrap md:table-cell">
                     <div className="flex items-center gap-2">
                       {coin.changeDirection === "up" ? (
-                        <ArrowUp className="size-4 text-green-500 self-baseline" />
+                        <ArrowUp className="size-4 self-baseline text-green-500" />
                       ) : (
-                        <ArrowDown className="size-4 text-red-500 self-baseline" />
+                        <ArrowDown className="size-4 self-baseline text-red-500" />
                       )}
                       <p
                         className={

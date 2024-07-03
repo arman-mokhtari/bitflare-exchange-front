@@ -7,7 +7,7 @@ const features = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className="size-6"
       >
         <path
           strokeLinecap="round"
@@ -27,7 +27,7 @@ const features = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className="size-6"
       >
         <path
           strokeLinecap="round"
@@ -47,7 +47,7 @@ const features = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className="size-6"
       >
         <path
           strokeLinecap="round"
@@ -67,7 +67,7 @@ const features = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className="size-6"
       >
         <path
           strokeLinecap="round"
@@ -87,7 +87,7 @@ const features = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className="size-6"
       >
         <path
           strokeLinecap="round"
@@ -107,7 +107,7 @@ const features = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className="size-6"
       >
         <path
           strokeLinecap="round"
@@ -125,9 +125,9 @@ const Feature = () => {
   return (
     <section className="py-14">
       <div className="text-gray-600">
-        <div className="relative max-w-2xl mx-auto text-center">
+        <div className="relative mx-auto max-w-2xl text-center">
           <div className="relative z-10">
-            <h3 className="text-gray-800 dark:text-gray-200 text-2xl font-semibold md:text-3xl">
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 md:text-3xl">
               چرا بیتفلر را انتخاب کنیم؟
             </h3>
           </div>
@@ -139,10 +139,10 @@ const Feature = () => {
                 key={idx}
                 className={`${
                   idx > 2 ? "hidden sm:block" : ""
-                } space-y-3 p-4 border rounded-lg hover:shadow-xl transition duration-200 shadow-input dark:shadow-none`}
+                } space-y-3 rounded-lg border p-4 shadow-input transition duration-200 hover:shadow-xl dark:shadow-none`}
               >
-                <div className="text-blue-600 pb-3">{item.icon}</div>
-                <h4 className="text-lg text-gray-800 dark:text-gray-200 font-semibold">
+                <div className="pb-3 text-blue-600">{item.icon}</div>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
                   {item.title}
                 </h4>
                 <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>

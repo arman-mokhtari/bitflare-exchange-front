@@ -3,9 +3,9 @@ import Image from "next/image";
 
 const AnimatedLogos = () => {
   return (
-    <section className="w-full my-14">
+    <section className="my-14 w-full">
       <div className="mb-16 flex w-full flex-col items-center justify-center">
-        <h3 className="text-gray-800 dark:text-gray-200 text-2xl font-semibold md:text-3xl text-center">
+        <h3 className="text-center text-2xl font-semibold text-gray-800 dark:text-gray-200 md:text-3xl">
           برترین ارزها در 24 ساعت گذشته!
         </h3>
       </div>
@@ -29,7 +29,7 @@ const AnimatedLogos = () => {
                   <Image
                     key={key}
                     src={logo.img}
-                    className="size-12 md:size-20 rounded-full"
+                    className="size-12 rounded-full md:size-20"
                     alt={`${logo.alt}`}
                     width={500}
                     title={`${logo.alt}`}
