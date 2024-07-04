@@ -1,8 +1,7 @@
+import SigninMainContent from "@/components/auth/SigninMainContent";
 
 const page = () => {
-  return (
-    <div>page</div>
-  )
-}
+  return <SigninMainContent />;
+};
 
-export default page
+export default page;

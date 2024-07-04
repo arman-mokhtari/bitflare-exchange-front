@@ -5,5 +5,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="">{children}</div>;
+  return (
+    <div>
+      <div
+        role="spacer"
+        className="mb-4 min-h-[66px]
+            md:mb-6 md:min-h-[95px]"
+      />
+      {children}
+    </div>
+  );
 }

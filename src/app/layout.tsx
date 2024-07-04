@@ -53,11 +53,6 @@ export default function RootLayout({
           <QueryProvider>
             <header>
               <Navbar />
-              <div
-                role="spacer"
-                className="mb-4 min-h-[66px]
-            md:mb-6 md:min-h-[95px]"
-              />
             </header>
             <main>{children}</main>
             <Toaster />
