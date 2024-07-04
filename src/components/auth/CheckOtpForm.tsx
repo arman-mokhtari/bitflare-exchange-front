@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/input-otp";
 
 import { CardContent } from "../ui/card";
-import OtpLayout from "./OtpLayout";
+import CardLayout from "../ui/CardLayout";
 import { RefreshCcw } from "lucide-react";
 import { CheckOtpFormSchema } from "@/lib/validations";
 
@@ -99,7 +99,7 @@ const CheckOtpForm = ({
   // };
 
   return (
-    <OtpLayout title="ارسال کد تایید">
+    <CardLayout title="ارسال کد تایید">
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -169,7 +169,7 @@ const CheckOtpForm = ({
           </form>
         </Form>
       </CardContent>
-    </OtpLayout>
+    </CardLayout>
   );
 };
 

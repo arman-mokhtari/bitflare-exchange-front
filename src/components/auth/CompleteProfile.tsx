@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { CardContent } from "../ui/card";
-import OtpLayout from "./OtpLayout";
+import CardLayout from "../ui/CardLayout";
 import { useEffect, useState } from "react";
 import { completeProfile } from "@/services/auth/authServices";
 import { useMutation } from "@tanstack/react-query";
@@ -86,7 +86,7 @@ const CompleteProfile = () => {
   };
 
   return (
-    <OtpLayout title="تکمیل مشخصات کاربری">
+    <CardLayout title="تکمیل مشخصات کاربری">
       <CardContent>
         <Form {...form}>
           <form
@@ -172,7 +172,7 @@ const CompleteProfile = () => {
           </form>
         </Form>
       </CardContent>
-    </OtpLayout>
+    </CardLayout>
   );
 };
 

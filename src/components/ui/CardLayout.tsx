@@ -1,7 +1,7 @@
 import React from "react";
-import { Card, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardHeader, CardTitle } from "./card";
 
-const OtpLayout = ({
+const CardLayout = ({
   children,
   title,
 }: {
@@ -9,7 +9,7 @@ const OtpLayout = ({
   title: string;
 }) => {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center">
       <Card className="w-[350px]">
         <CardHeader className="flex items-center">
           <CardTitle>{title}</CardTitle>
@@ -20,4 +20,4 @@ const OtpLayout = ({
   );
 };
 
-export default OtpLayout;
+export default CardLayout;

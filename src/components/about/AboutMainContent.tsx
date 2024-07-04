@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AboutMainContent = () => {
   return (
-    <section className="mt-6 flex min-h-screen flex-col items-center">
+    <section className="flex min-h-screen flex-col items-center">
       <div className="px-4 md:px-8">
         <div className="max-w-xl">
           <h1 className="text-3xl font-semibold text-gray-800 dark:text-white sm:text-4xl">

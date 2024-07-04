@@ -55,8 +55,8 @@ export default function RootLayout({
               <Navbar />
               <div
                 role="spacer"
-                className="min-h-[66px]
-            md:min-h-[95px]"
+                className="mb-4 min-h-[66px]
+            md:mb-6 md:min-h-[95px]"
               />
             </header>
             <main>{children}</main>

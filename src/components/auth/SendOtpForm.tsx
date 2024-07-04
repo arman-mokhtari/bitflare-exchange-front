@@ -16,7 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { CardContent, CardFooter } from "../ui/card";
 import Link from "next/link";
-import OtpLayout from "./OtpLayout";
+import CardLayout from "../ui/CardLayout";
 import UserCaptchaService from "../captcha/UserCaptchaService";
 import React, { useEffect } from "react";
 import { SendOtpFormSchema } from "@/lib/validations";
@@ -63,7 +63,7 @@ const SendOtpForm = ({
   }
 
   return (
-    <OtpLayout title="ثبت نام">
+    <CardLayout title="ثبت نام">
       <CardContent>
         <Form {...form}>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -129,7 +129,7 @@ const SendOtpForm = ({
           حساب کاربری دارم! ورود
         </Link>
       </CardFooter>
-    </OtpLayout>
+    </CardLayout>
   );
 };
 
