@@ -166,7 +166,7 @@ const Navbar = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "flex md:min-w-[70vw] lg:min-w-fit fixed md:top-4 inset-x-0 md:mx-10 border-b md:border border-transparent dark:border-white/[0.2] md:rounded-lg  backdrop-blur-md bg-white dark:bg-black md:bg-white/50 md:dark:bg-black/50 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] md:py-1 items-center justify-center",
+        "flex md:min-w-[70vw] lg:min-w-fit fixed md:top-4 inset-x-0 md:mx-10 border-b md:border border-transparent dark:border-white/[0.2] md:rounded-lg  backdrop-blur-md bg-white dark:bg-black md:bg-white/50 md:dark:bg-black/50 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] md:py-1 items-center justify-center min-h-[66px] md:min-h-[75px]",
         className
       )}
     >
@@ -321,7 +321,7 @@ const Navbar = ({ className }: { className?: string }) => {
                 <ModeToggle />
                 <li>
                   <Link
-                    href="/"
+                    href="/signin"
                     className="block rounded-lg border py-3 text-center text-gray-700 hover:text-blue-600 dark:text-white md:border-none"
                   >
                     ورود
