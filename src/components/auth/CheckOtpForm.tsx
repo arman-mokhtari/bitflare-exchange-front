@@ -102,7 +102,11 @@ const CheckOtpForm = ({
     <CardLayout title="ارسال کد تایید">
       <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-6"
+            autoComplete="off"
+          >
             <FormField
               control={form.control}
               name="pin"
@@ -154,7 +158,11 @@ const CheckOtpForm = ({
               )}
             />
             <div className="flex justify-start gap-2">
-              <Button disabled={isPending} type="submit">
+              <Button
+                className=" bg-blue-700 text-white dark:bg-blue-500"
+                disabled={isPending}
+                type="submit"
+              >
                 {isPending ? "درحال ارسال" : "تایید"}
               </Button>
               <Button

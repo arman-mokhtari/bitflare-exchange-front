@@ -35,7 +35,7 @@ const Footer = () => {
               دیجیتال. حفظ دارایی‌های مشتریان اولویت ما است.
             </p>
           </div>
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form onSubmit={(e) => e.preventDefault()} autoComplete="off">
             <label className="block pb-2 pt-4">بروز باشید!</label>
             <div className="flex max-w-sm items-center rounded-md border p-1">
               <input

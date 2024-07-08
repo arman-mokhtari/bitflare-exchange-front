@@ -1,45 +1,37 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-
 import { Button } from "@/components/ui/button";
+import { CardContent } from "@/components/ui/card";
+import CardLayout from "@/components/ui/CardLayout";
 import {
-  Form,
-  FormControl,
   FormField,
   FormItem,
   FormLabel,
+  FormControl,
   FormMessage,
+  Form,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { CardContent } from "../ui/card";
-import CardLayout from "../ui/CardLayout";
-import { useEffect, useState } from "react";
-import { completeProfile } from "@/services/auth/authServices";
-import { useMutation } from "@tanstack/react-query";
+import PasswordInput from "@/components/ui/PasswordInput";
+import { toast } from "@/components/ui/use-toast";
+import { useResetPassword } from "@/hooks/useResetPassword";
+import { ResetPassTokenSchema } from "@/lib/validations";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { toast } from "../ui/use-toast";
-import { CompleteProfileSchema } from "@/lib/validations";
-import PasswordInput from "../ui/PasswordInput";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
-const CompleteProfile = () => {
+const ResetPassTokenMainContent = ({ token }: { token: string }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const router = useRouter();
   const [isSubmit, setIsSubmit] = useState(false);
-  const { isPending, mutateAsync } = useMutation({
-    mutationFn: completeProfile,
-  });
 
-  const form = useForm<z.infer<typeof CompleteProfileSchema>>({
-    resolver: zodResolver(CompleteProfileSchema),
+  const form = useForm<z.infer<typeof ResetPassTokenSchema>>({
+    resolver: zodResolver(ResetPassTokenSchema),
     mode: "onChange",
     defaultValues: {
-      name: "",
-      email: "",
       password: "",
       confirmPassword: "",
     },
@@ -50,43 +42,52 @@ const CompleteProfile = () => {
   useEffect(() => {
     if (isSubmitSuccessful && isSubmit) {
       reset({
-        name: "",
-        email: "",
         password: "",
         confirmPassword: "",
       });
     }
   }, [isSubmit, isSubmitSuccessful, reset]);
 
+  const queryClient = useQueryClient();
+
+  const { isPending, mutateAsync } = useResetPassword();
+  const router = useRouter();
+
   const submitHandler = async ({
-    name,
-    email,
     password,
     confirmPassword,
-  }: z.infer<typeof CompleteProfileSchema>) => {
+  }: z.infer<typeof ResetPassTokenSchema>) => {
     try {
       const { message } = await mutateAsync({
-        name,
-        email,
-        password,
-        confirmPassword,
+        token,
+        data: {
+          password,
+          confirmPassword,
+        },
       });
+      queryClient.invalidateQueries({ queryKey: ["get-user"] });
+      setIsSubmit(true);
       toast({
         title: message,
         variant: "success",
+        duration: 4000,
       });
-      setIsSubmit(true);
+
       router.push("/");
     } catch (error: any) {
+      const errorMessage =
+        error?.response?.data?.error?.message ||
+        error?.response?.data?.message ||
+        "خطایی رخ داده است.";
       toast({
-        title: error?.response?.data?.message,
+        title: errorMessage,
         variant: "destructive",
       });
     }
   };
 
   return (
-    <CardLayout title="تکمیل مشخصات کاربری">
+    <CardLayout title=" فراموشی کلمه عبور">
       <CardContent>
         <Form {...form}>
           <form
@@ -94,35 +95,6 @@ const CompleteProfile = () => {
             onSubmit={handleSubmit(submitHandler)}
             className="space-y-4"
           >
-            <FormField
-              control={control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>نام و نام خانوادگی</FormLabel>
-                  <FormControl>
-                    <Input autoFocus type="text" {...field} />
-                  </FormControl>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>ایمیل</FormLabel>
-                  <FormControl>
-                    <Input autoFocus type="email" {...field} />
-                  </FormControl>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
             <FormField
               control={control}
               name="password"
@@ -176,4 +148,4 @@ const CompleteProfile = () => {
   );
 };
 
-export default CompleteProfile;
+export default ResetPassTokenMainContent;

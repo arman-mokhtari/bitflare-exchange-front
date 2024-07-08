@@ -58,7 +58,6 @@ const SendOtpForm = ({
   }, [isSubmit, isSubmitSuccessful, reset]);
 
   function onSubmit(formData: z.infer<typeof SendOtpFormSchema>) {
-    console.log(formData);
     sendOtpHandler();
   }
 
@@ -66,7 +65,11 @@ const SendOtpForm = ({
     <CardLayout title="ثبت نام">
       <CardContent>
         <Form {...form}>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-4"
+            autoComplete="off"
+          >
             <FormField
               control={control}
               name="phone"
@@ -111,7 +114,7 @@ const SendOtpForm = ({
               )}
             />
             <Button
-              className="w-full"
+              className="w-full bg-blue-700 text-white dark:bg-blue-500"
               type="submit"
               aria-label="submit"
               disabled={isPending}
@@ -124,7 +127,7 @@ const SendOtpForm = ({
       <CardFooter>
         <Link
           href="/signin"
-          className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
+          className="whitespace-nowrap text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
         >
           حساب کاربری دارم! ورود
         </Link>

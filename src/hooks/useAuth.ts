@@ -54,7 +54,7 @@ export const useGetUsers = () =>
     refetchOnWindowFocus: true,
   });
 
-export const useGetUserById = (id) =>
+export const useGetUserById = (id: string) =>
   useQuery({
     queryKey: ["get-user-id", id],
     queryFn: () => getUserById(id),
@@ -62,7 +62,7 @@ export const useGetUserById = (id) =>
     refetchOnWindowFocus: true,
   });
 
-export const useGetOneUserById = (id) =>
+export const useGetOneUserById = (id: string) =>
   useQuery({
     queryKey: ["get-one-user-id", id],
     queryFn: () => getOneUserById(id),

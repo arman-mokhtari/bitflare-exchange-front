@@ -14,7 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { CardContent } from "../ui/card";
+import { CardContent, CardFooter } from "../ui/card";
 import CardLayout from "../ui/CardLayout";
 import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
@@ -25,8 +25,9 @@ import { useAuthenticateUser } from "@/hooks/useAuth";
 import { SigninSchema } from "@/lib/validations";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import UserCaptchaService from "../captcha/UserCaptchaService";
+import Link from "next/link";
 
-const CompleteProfile = () => {
+const SigninMainContent = () => {
   const router = useRouter();
 
   const [isSubmit, setIsSubmit] = useState(false);
@@ -71,7 +72,7 @@ const CompleteProfile = () => {
   }: z.infer<typeof SigninSchema>) => {
     try {
       const requestData = {
-        [loginMethod === 'phone' ? 'phoneNumber' : 'email']: loginIdentifier,
+        [loginMethod === "phone" ? "phoneNumber" : "email"]: loginIdentifier,
         password,
         enteredCaptcha,
       };
@@ -145,7 +146,11 @@ const CompleteProfile = () => {
                     {loginMethod === "phone" ? "شماره موبایل" : "ایمیل"}
                   </FormLabel>
                   <FormControl>
-                    <Input autoFocus type={loginMethod === "phone" ? "tel" : "email"} {...field} />
+                    <Input
+                      autoFocus
+                      type={loginMethod === "phone" ? "tel" : "email"}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -188,7 +193,7 @@ const CompleteProfile = () => {
             />
 
             <Button
-              className="w-full"
+              className="w-full bg-blue-700 text-white dark:bg-blue-500"
               type="submit"
               aria-label="submit"
               disabled={isPending}
@@ -198,8 +203,23 @@ const CompleteProfile = () => {
           </form>
         </Form>
       </CardContent>
+      <CardFooter className="flex flex-row justify-between">
+        
+        <Link
+          href="/auth"
+          className="whitespace-nowrap text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
+        >
+          حساب کاربری ندارم! ثبت نام
+        </Link>
+        <Link
+          href="/forget-password"
+          className="whitespace-nowrap text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
+        >
+          فراموشی کلمه عبور!
+        </Link>
+      </CardFooter>
     </CardLayout>
   );
 };
 
-export default CompleteProfile;
+export default SigninMainContent;
