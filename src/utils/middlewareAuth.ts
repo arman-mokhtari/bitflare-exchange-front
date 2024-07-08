@@ -13,39 +13,17 @@ type Request = {
   cookies: Cookies;
 };
 
-type UserProfile = {
-    user: {
-      id: string;
-      name: string;
-      email: string;
-      isActive: boolean; // Add other necessary fields as needed
-      role: string;      // Add other necessary fields as needed
-    };
-  };
-
-export default async function middlewareAuth(req: Request): Promise<UserProfile['user'] | null> {
-  try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/user/profile`,
-      {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          Cookie: toStringCookies(req.cookies),
-        },
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch user profile');
+export default async function middlewareAuth(req: Request): Promise<any> {
+  const { data } = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/user/profile`,
+    {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Cookie: toStringCookies(req.cookies),
+      },
     }
-
-    const data: UserProfile = await response.json();
-    const { user } = data || {};
-
-    return user || null;
-  } catch (error) {
-    console.error("Error in middlewareAuth:", error);
-    return null;
-  }
+  ).then((res) => res.json());
+  const { user } = data || {};
+  return user;
 }

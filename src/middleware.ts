@@ -1,11 +1,12 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from 'next/server'
 import middlewareAuth from "./utils/middlewareAuth";
 
 export async function middleware(request: NextRequest) {
   const url = request.url;
   const pathname = request.nextUrl.pathname;
 
-  if (pathname.startsWith("/profile")) {
+  if (pathname.startsWith("/user")) {
     const user = await middlewareAuth(request);
     if (!user) return NextResponse.redirect(new URL("/404", url));
     if (user && !user.isActive)
@@ -17,7 +18,7 @@ export async function middleware(request: NextRequest) {
     if (user) return NextResponse.redirect(new URL("/", url));
   }
 
-  if (pathname.startsWith("/sign-in")) {
+  if (pathname.startsWith("/signin")) {
     const user = await middlewareAuth(request);
     if (user) return NextResponse.redirect(new URL("/", url));
   }
@@ -43,7 +44,7 @@ export async function middleware(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
   const cspHeader = `
     default-src 'self';
-  script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval' https://*.googletagmanager.com;
+  script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval';
   script-src-elem 'self' 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
   img-src 'self' blob: data:;
@@ -79,15 +80,3 @@ export async function middleware(request: NextRequest) {
 
   return response;
 }
-
-export const config = {
-  matcher: [
-    {
-      source: "/((?!api|_next/static|_next/image|favicon.ico).*)",
-      missing: [
-        { type: "header", key: "next-router-prefetch" },
-        { type: "header", key: "purpose", value: "prefetch" },
-      ],
-    },
-  ],
-};

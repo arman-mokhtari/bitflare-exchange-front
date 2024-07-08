@@ -158,9 +158,9 @@ const Navbar = ({ className }: { className?: string }) => {
       isDrapdown: true,
       navs: dropdownNavs,
     },
-    { title: "ارتباط با ما", path: "/contact-us", isDrapdown: false },
-    { title: "پنل کاربر", path: "/user-panel", isDrapdown: false },
-    { title: "پنل ادمین", path: "/admin-panel", isDrapdown: false },
+    { title: "ارتباط با ما", path: "/contact", isDrapdown: false },
+    { title: "پنل کاربر", path: "/user", isDrapdown: false },
+    { title: "پنل ادمین", path: "/admin", isDrapdown: false },
   ];
 
   return (
