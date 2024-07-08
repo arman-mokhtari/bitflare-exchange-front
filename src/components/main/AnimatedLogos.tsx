@@ -20,9 +20,9 @@ const AnimatedLogos = () => {
         >
           {Array(5)
             .fill(null)
-            .map((index) => (
+            .map((_, idx) => (
               <div
-                key={index}
+                key={idx}
                 className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-4 sm:gap-14"
               >
                 {techStack.map((logo, key) => (

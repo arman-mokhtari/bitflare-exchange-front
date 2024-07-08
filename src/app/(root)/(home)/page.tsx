@@ -6,6 +6,7 @@ import Hero from "@/components/main/Hero";
 import Testimonial from "@/components/main/Testimonial";
 
 const page = () => {
+  
   return (
     <div className="relative flex flex-col items-center justify-center overflow-hidden">
       <div className="relative w-full">
