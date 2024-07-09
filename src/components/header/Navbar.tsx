@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 "use client";
 
 import Link from "next/link";
@@ -151,29 +150,57 @@ const Navbar = ({ className }: { className?: string }) => {
   }, []);
 
   const navigation = [
-    { title: "خانه", path: "/", isDrapdown: false },
+    { title: "خانه", path: "/", isDrapdown: false, isCloseOnClick: true },
     {
       title: "امکانات",
       path: "/",
       isDrapdown: true,
       navs: dropdownNavs,
+      isCloseOnClick: false,
     },
-    { title: "ارتباط با ما", path: "/contact", isDrapdown: false },
-    { title: "پنل کاربر", path: "/user", isDrapdown: false },
-    { title: "پنل ادمین", path: "/admin", isDrapdown: false },
+    {
+      title: "ارتباط با ما",
+      path: "/contact",
+      isDrapdown: false,
+      isCloseOnClick: true,
+    },
+    {
+      title: "پنل کاربر",
+      path: "/user",
+      isDrapdown: false,
+      isCloseOnClick: true,
+    },
+    {
+      title: "پنل ادمین",
+      path: "/admin",
+      isDrapdown: false,
+      isCloseOnClick: true,
+    },
   ];
+
+  const stateHandler = (item: any) => {
+    if (item.isCloseOnClick) {
+      setState(!state);
+    }
+    setDrapdownState({ isActive: false, idx: null });
+  };
+
+  const insideDropdownHandler = () => {
+    setDrapdownState({ isActive: false, idx: null });
+    setState(!state);
+  };
 
   return (
     <div
       className={cn(
-        "flex md:min-w-[70vw] lg:min-w-fit fixed md:top-4 inset-x-0 md:mx-10 border-b md:border border-transparent dark:border-white/[0.2] md:rounded-lg  backdrop-blur-md bg-white dark:bg-black md:bg-white/50 md:dark:bg-black/50 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] md:py-1 items-center justify-center h-[66px] md:h-[75px]",
+        `flex md:min-w-[70vw] lg:min-w-fit fixed md:top-4 inset-x-0 md:mx-10 border-b md:border border-transparent dark:border-white/[0.2] md:rounded-lg  backdrop-blur-md bg-white dark:bg-black md:bg-white/50 md:dark:bg-black/50 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] md:py-1 items-center justify-center ${!state ? "h-[66px]" : ""} md:h-[75px]`,
         className
       )}
     >
       <nav
         className={`relative z-20 w-full md:static md:border-none md:bg-transparent md:text-sm ${
           state
-            ? "rounded-b-xl bg-white shadow-lg dark:bg-black-100 md:shadow-none"
+            ? "rounded-b-xl bg-white  shadow-lg dark:bg-black-100 md:shadow-none"
             : ""
         }`}
       >
@@ -220,7 +247,7 @@ const Navbar = ({ className }: { className?: string }) => {
               state ? "block" : "hidden"
             }`}
           >
-            <ul className="items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
+            <ul className="max-h-72 items-center space-y-6 overflow-y-auto md:flex md:space-x-6 md:space-y-0">
               {navigation.map((item, idx) => {
                 return (
                   <li key={idx}>
@@ -270,6 +297,7 @@ const Navbar = ({ className }: { className?: string }) => {
                       <Link
                         href={item.path}
                         className="block text-gray-700 hover:text-blue-600 dark:text-white"
+                        onClick={() => stateHandler(item)}
                       >
                         {item.title}
                       </Link>
@@ -287,9 +315,10 @@ const Navbar = ({ className }: { className?: string }) => {
                               <ul className="mt-5 space-y-6">
                                 {dropdownItem.navs.map((navItem, idx) => (
                                   <li key={idx} className="group">
-                                    <a
+                                    <Link
                                       href={navItem.path}
                                       className="flex items-center gap-3"
+                                      onClick={insideDropdownHandler}
                                     >
                                       <div className="flex size-12 items-center justify-center rounded-full bg-blue-50 text-blue-600 duration-150 group-hover:bg-blue-600 group-hover:text-white dark:bg-blue-100 md:size-14">
                                         {navItem.icon}
@@ -302,7 +331,7 @@ const Navbar = ({ className }: { className?: string }) => {
                                           {navItem.desc}
                                         </p>
                                       </div>
-                                    </a>
+                                    </Link>
                                   </li>
                                 ))}
                               </ul>
