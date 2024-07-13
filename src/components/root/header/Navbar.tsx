@@ -9,6 +9,7 @@ import MainLogo from "../../common/MainLogo";
 import { useGetUser } from "@/hooks/useAuth";
 import { navigation } from "@/data";
 import { UserDropdownMenu } from "@/components/common/UserDropdownMenu";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface DrapdownState {
   idx: number | null;
@@ -33,7 +34,12 @@ const Navbar = ({ className }: { className?: string }) => {
   const { data, isLoading } = useGetUser();
   const { user } = data || {};
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading)
+    return (
+      <Skeleton
+        className={`fixed inset-x-0 z-20 md:top-4 md:mx-10 md:min-w-[70vw] md:rounded-lg md:py-1 lg:min-w-fit ${!state ? "h-[66px]" : ""} md:h-[75px]`}
+      />
+    );
 
   const stateHandler = (item: any) => {
     if (item.isCloseOnClick) {
@@ -240,7 +246,7 @@ const Navbar = ({ className }: { className?: string }) => {
 
                 {user && user.isActive && (
                   <li className="hidden md:block">
-                    <UserDropdownMenu dropdownMenuLabel={user.name}/>
+                    <UserDropdownMenu dropdownMenuLabel={user.name} />
                   </li>
                 )}
               </div>
