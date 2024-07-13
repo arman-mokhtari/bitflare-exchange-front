@@ -19,8 +19,8 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 
-import { CardContent } from "../ui/card";
-import CardLayout from "../ui/CardLayout";
+import { CardContent } from "../../ui/card";
+import CardLayout from "../../ui/CardLayout";
 import { RefreshCcw } from "lucide-react";
 import { CheckOtpFormSchema } from "@/lib/validations";
 

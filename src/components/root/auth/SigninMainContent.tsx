@@ -14,21 +14,20 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { CardContent, CardFooter } from "../ui/card";
-import CardLayout from "../ui/CardLayout";
+import { CardContent, CardFooter } from "../../ui/card";
+import CardLayout from "../../ui/CardLayout";
 import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { toast } from "../ui/use-toast";
-import PasswordInput from "../ui/PasswordInput";
+import { toast } from "../../ui/use-toast";
+import PasswordInput from "../../ui/PasswordInput";
 import { useAuthenticateUser } from "@/hooks/useAuth";
 import { SigninSchema } from "@/lib/validations";
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import UserCaptchaService from "../captcha/UserCaptchaService";
+import { RadioGroup, RadioGroupItem } from "../../ui/radio-group";
+import UserCaptchaService from "../../captcha/UserCaptchaService";
 import Link from "next/link";
 
 const SigninMainContent = () => {
-  
   const router = useRouter();
 
   const [isSubmit, setIsSubmit] = useState(false);
@@ -78,7 +77,7 @@ const SigninMainContent = () => {
         enteredCaptcha,
       };
 
-      const { message } = await mutateAsync(requestData);
+      const { message, user } = await mutateAsync(requestData);
 
       queryClient.invalidateQueries({ queryKey: ["get-user"] });
       toast({
@@ -86,7 +85,12 @@ const SigninMainContent = () => {
         variant: "success",
       });
       setIsSubmit(true);
-      router.push("/");
+
+      if (user.role === "ADMIN") {
+        router.push("/admin");
+      } else {
+        router.push("/user");
+      }
     } catch (error: any) {
       queryClient.invalidateQueries({ queryKey: ["get-user-captcha"] });
       toast({
@@ -205,7 +209,6 @@ const SigninMainContent = () => {
         </Form>
       </CardContent>
       <CardFooter className="flex flex-row justify-between">
-        
         <Link
           href="/auth"
           className="whitespace-nowrap text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"

@@ -14,10 +14,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { CardContent, CardFooter } from "../ui/card";
+import { CardContent, CardFooter } from "../../ui/card";
 import Link from "next/link";
-import CardLayout from "../ui/CardLayout";
-import UserCaptchaService from "../captcha/UserCaptchaService";
+import CardLayout from "../../ui/CardLayout";
+import UserCaptchaService from "../../captcha/UserCaptchaService";
 import React, { useEffect } from "react";
 import { SendOtpFormSchema } from "@/lib/validations";
 

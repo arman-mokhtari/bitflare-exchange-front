@@ -1,5 +1,5 @@
 "use client";
-import ResetPassTokenMainContent from "@/components/auth/forgetPassword/ResetPassTokenMainContent";
+import ResetPassTokenMainContent from "@/components/root/auth/forgetPassword/ResetPassTokenMainContent";
 import { useGetIsValidateToken } from "@/hooks/useResetPassword";
 import { useParams, useRouter } from "next/navigation";
 import React from "react";
@@ -9,8 +9,8 @@ const Page = () => {
   const router = useRouter();
   const { data, isLoading } = useGetIsValidateToken(token);
   const { isValid } = data || {};
- 
-if (isLoading) return <div>Loading...</div>; 
+
+  if (isLoading) return <div>Loading...</div>;
 
   if (!isValid) return router.push("/404");
   return <ResetPassTokenMainContent token={token} />;

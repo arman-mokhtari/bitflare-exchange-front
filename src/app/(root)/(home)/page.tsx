@@ -1,12 +1,11 @@
-import AnimatedLogos from "@/components/main/AnimatedLogos";
-import Ceo from "@/components/main/Ceo";
-import CoinsTable from "@/components/main/CoinsTable";
-import Feature from "@/components/main/Feature";
-import Hero from "@/components/main/Hero";
-import Testimonial from "@/components/main/Testimonial";
+import AnimatedLogos from "@/components/root/main/AnimatedLogos";
+import Ceo from "@/components/root/main/Ceo";
+import CoinsTable from "@/components/root/main/CoinsTable";
+import Feature from "@/components/root/main/Feature";
+import Hero from "@/components/root/main/Hero";
+import Testimonial from "@/components/root/main/Testimonial";
 
 const page = () => {
-  
   return (
     <div className="relative flex flex-col items-center justify-center overflow-hidden">
       <div className="relative w-full">

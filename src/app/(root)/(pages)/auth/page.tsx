@@ -1,4 +1,4 @@
-import AuthMainContent from "@/components/auth/AuthMainContent";
+import AuthMainContent from "@/components/root/auth/AuthMainContent";
 
 const page = () => {
   return <AuthMainContent />;

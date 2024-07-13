@@ -3,7 +3,6 @@ import { Inter, Vazirmatn } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/header/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import QueryProvider from "@/providers/QueryClientProvider";
 import React from "react";
@@ -51,10 +50,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <QueryProvider>
-            <header>
-              <Navbar />
-            </header>
-            <main>{children}</main>
+            {children}
             <Toaster />
           </QueryProvider>
         </ThemeProvider>

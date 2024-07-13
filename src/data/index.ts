@@ -1,3 +1,4 @@
+
 export const gridItems = [
   {
     id: 1,
@@ -303,3 +304,86 @@ export const team = [
       twitter: "javascript:void(0)",
   },
 ]
+
+export const dropdownNavs = [
+  {
+    label: "محصولات",
+    navs: [
+      {
+        title: "تحلیل‌ها",
+        desc: "ابزارهای تحلیل داده",
+        path: "/",
+        icon: ""
+      },
+      {
+        title: "گزارشات",
+        desc: "ایجاد و مشاهده گزارشات",
+        path: "/",
+        icon: ""
+      },
+    ],
+  },
+  {
+    label: "منابع",
+    navs: [
+      {
+        title: "وبلاگ",
+        desc: "مطالب و مقالات جدید",
+        path: "/",
+        icon: ""
+      },
+      {
+        title: "جامعه",
+        desc: "ارتباط با کاربران",
+        path: "/",
+        icon: ""
+      },
+    ],
+  },
+  {
+    label: "شرکت",
+    navs: [
+      {
+        title: "درباره ما",
+        desc: "اطلاعات درباره بیتفلر",
+        path: "/about",
+        icon: ""
+      },
+      {
+        title: "فرصت‌های شغلی",
+        desc: "همکاری با ما",
+        path: "/",
+        icon: ""
+      },
+    ],
+  },
+];
+
+export const navigation = [
+  { title: "خانه", path: "/", isDrapdown: false, isCloseOnClick: true },
+  {
+    title: "امکانات",
+    path: "/",
+    isDrapdown: true,
+    navs: dropdownNavs,
+    isCloseOnClick: false,
+  },
+  {
+    title: "ارتباط با ما",
+    path: "/contact",
+    isDrapdown: false,
+    isCloseOnClick: true,
+  },
+  {
+    title: "پنل کاربر",
+    path: "/user",
+    isDrapdown: false,
+    isCloseOnClick: true,
+  },
+  {
+    title: "پنل ادمین",
+    path: "/admin",
+    isDrapdown: false,
+    isCloseOnClick: true,
+  },
+];

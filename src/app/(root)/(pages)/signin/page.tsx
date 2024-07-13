@@ -1,4 +1,4 @@
-import SigninMainContent from "@/components/auth/SigninMainContent";
+import SigninMainContent from "@/components/root/auth/SigninMainContent";
 
 const page = () => {
   return <SigninMainContent />;

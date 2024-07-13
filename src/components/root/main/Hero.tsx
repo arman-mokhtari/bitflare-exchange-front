@@ -1,10 +1,10 @@
 // "use client"
-import { Spotlight } from "../ui/Spotlight";
-import { TextGenerateEffect } from "../ui/TextGenerateEffect";
-import ShimmerButton from "../ui/ShimmerButton";
+import { Spotlight } from "../../ui/Spotlight";
+import { TextGenerateEffect } from "../../ui/TextGenerateEffect";
+import ShimmerButton from "../../ui/ShimmerButton";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
-import { AvatarGroup } from "../common/AvatarGroupe";
+import { AvatarGroup } from "../../common/AvatarGroupe";
 
 const Hero = () => {
   return (
@@ -39,7 +39,7 @@ const Hero = () => {
             تجربه‌ای بی‌نظیر از سرمایه‌گذاری مدرن
           </p>
           <TextGenerateEffect
-            words="خرید و فروش ارز دیجیتال در صرافی بیت فلر"
+            words="خرید و فروش ارز دیجیتال در صرافی بیتفلر"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
           <AvatarGroup />

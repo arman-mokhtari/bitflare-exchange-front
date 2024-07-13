@@ -1,4 +1,4 @@
-import RequestResetPasswordForm from "@/components/auth/forgetPassword/RequestResetPasswordForm";
+import RequestResetPasswordForm from "@/components/root/auth/forgetPassword/RequestResetPasswordForm";
 
 const page = () => {
   return <RequestResetPasswordForm />;

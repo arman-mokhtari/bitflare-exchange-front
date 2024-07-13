@@ -1,5 +1,5 @@
 import Image from "next/image";
-import MainLogo from "../common/MainLogo";
+import MainLogo from "../../common/MainLogo";
 
 const Ceo = () => {
   return (

@@ -7,7 +7,7 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { coinsData, headers } from "@/data";
-import ConnectButton from "../ui/ConnectButton";
+import ConnectButton from "../../ui/ConnectButton";
 import { ArrowDown, ArrowUp } from "lucide-react";
 
 export default function CoinsTable() {

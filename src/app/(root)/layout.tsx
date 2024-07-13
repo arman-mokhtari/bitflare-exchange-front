@@ -1,6 +1,7 @@
-import Footer from "@/components/footer/FooterMainContent";
+import Footer from "@/components/root/footer/FooterMainContent";
 import "../globals.css";
 import React from "react";
+import Navbar from "@/components/root/header/Navbar";
 
 export default function RootLayout({
   children,
@@ -8,11 +9,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
-      <div className="min-h-screen">{children}</div>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main className="min-h-screen">{children}</main>
       <footer>
         <Footer />
       </footer>
-    </div>
+    </>
   );
 }

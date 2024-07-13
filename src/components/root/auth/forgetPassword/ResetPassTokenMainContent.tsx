@@ -58,7 +58,7 @@ const ResetPassTokenMainContent = ({ token }: { token: string }) => {
     confirmPassword,
   }: z.infer<typeof ResetPassTokenSchema>) => {
     try {
-      const { message } = await mutateAsync({
+      const { message, user } = await mutateAsync({
         token,
         data: {
           password,
@@ -73,7 +73,12 @@ const ResetPassTokenMainContent = ({ token }: { token: string }) => {
         duration: 4000,
       });
 
-      router.push("/");
+      if (user.role === "ADMIN") {
+        router.push("/admin");
+      } else {
+        router.push("/user");
+      }
+      
     } catch (error: any) {
       const errorMessage =
         error?.response?.data?.error?.message ||

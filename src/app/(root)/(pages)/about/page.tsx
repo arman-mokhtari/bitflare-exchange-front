@@ -1,4 +1,4 @@
-import AboutMainContent from "@/components/about/AboutMainContent";
+import AboutMainContent from "@/components/root/about/AboutMainContent";
 
 const page = () => {
   return <AboutMainContent />;

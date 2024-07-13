@@ -1,7 +1,7 @@
 "use client";
 
 import { currentPersianDate } from "@/utils/toLocalDate";
-import MainLogo from "../common/MainLogo";
+import MainLogo from "../../common/MainLogo";
 import Link from "next/link";
 
 import { FaInstagram, FaTelegram, FaTwitter, FaYoutube } from "react-icons/fa";

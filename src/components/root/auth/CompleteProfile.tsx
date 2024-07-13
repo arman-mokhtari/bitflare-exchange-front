@@ -14,15 +14,15 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { CardContent } from "../ui/card";
-import CardLayout from "../ui/CardLayout";
+import { CardContent } from "../../ui/card";
+import CardLayout from "../../ui/CardLayout";
 import { useEffect, useState } from "react";
 import { completeProfile } from "@/services/auth/authServices";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { toast } from "../ui/use-toast";
+import { toast } from "../../ui/use-toast";
 import { CompleteProfileSchema } from "@/lib/validations";
-import PasswordInput from "../ui/PasswordInput";
+import PasswordInput from "../../ui/PasswordInput";
 
 const CompleteProfile = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -65,7 +65,7 @@ const CompleteProfile = () => {
     confirmPassword,
   }: z.infer<typeof CompleteProfileSchema>) => {
     try {
-      const { message } = await mutateAsync({
+      const { message, user } = await mutateAsync({
         name,
         email,
         password,
@@ -76,7 +76,12 @@ const CompleteProfile = () => {
         variant: "success",
       });
       setIsSubmit(true);
-      router.push("/");
+
+      if (user.role === "ADMIN") {
+        router.push("/admin");
+      } else {
+        router.push("/user");
+      }
     } catch (error: any) {
       toast({
         title: error?.response?.data?.message,

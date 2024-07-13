@@ -1,4 +1,4 @@
-import CompleteProfile from "@/components/auth/CompleteProfile";
+import CompleteProfile from "@/components/root/auth/CompleteProfile";
 
 const Page = () => {
   return <CompleteProfile />;

@@ -5,7 +5,7 @@ import { useQueryClient } from "@tanstack/react-query";
 
 import { useRouter } from "next/navigation";
 import { useCheckOtp, useGetOtp, useGetResendOtp } from "@/hooks/useAuth";
-import { useToast } from "../ui/use-toast";
+import { useToast } from "../../ui/use-toast";
 import CheckOtpForm from "./CheckOtpForm";
 import SendOtpForm from "./SendOtpForm";
 
@@ -91,11 +91,15 @@ const AuthMainContent = () => {
       toast({
         title: message,
       });
-      if (user.isActive) {
-        router.push("/");
+
+      if (user.role === "ADMIN" && user.isActive) {
+        router.push("/admin");
+      } else if (user.role === "USER" && user.isActive) {
+        router.push("/user");
       } else {
         router.push("/complete-profile");
       }
+
       queryClient.invalidateQueries({ queryKey: ["get-user"] });
     } catch (error: any) {
       toast({
