@@ -12,8 +12,28 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import LogoutToggle from "./LogoutToggle";
+import Link from "next/link";
 
-export function UserDropdownMenu({dropdownMenuLabel}: {dropdownMenuLabel: string}) {
+export function UserDropdownMenu({
+  dropdownMenuLabel,
+}: {
+  dropdownMenuLabel: string;
+}) {
+  const userMenuItems = [
+    {
+      title: "پروفایل کاربری",
+      path: "/user",
+      icon: <User className="size-4" />,
+      ariaLabel: "user panel",
+    },
+    {
+      title: "فاکتورها",
+      path: "/user/payments",
+      icon: <CreditCard className="size-4" />,
+      ariaLabel: "payments",
+    },
+  ];
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -27,23 +47,28 @@ export function UserDropdownMenu({dropdownMenuLabel}: {dropdownMenuLabel: string
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel className="text-right">{dropdownMenuLabel}</DropdownMenuLabel>
+        <DropdownMenuLabel className="text-right">
+          {dropdownMenuLabel}
+        </DropdownMenuLabel>
         <DropdownMenuSeparator />
+
         <DropdownMenuGroup>
-          <DropdownMenuItem className="flex items-center justify-end gap-2">
-            <span>پروفایل</span>
-            <User className="size-4" />
-          </DropdownMenuItem>
-          <DropdownMenuItem className="flex items-center justify-end gap-2">
-            <span>فاکتورها</span>
-            <CreditCard className="size-4" />
-          </DropdownMenuItem>
+          {userMenuItems.map((item, idx) => (
+            <DropdownMenuItem
+              key={idx}
+              className="flex items-center justify-end gap-2"
+            >
+              <Link href={item?.path} role="link" aria-label={item?.ariaLabel}>
+                {item?.title}
+              </Link>
+              {item?.icon}
+            </DropdownMenuItem>
+          ))}
         </DropdownMenuGroup>
+
         <DropdownMenuSeparator />
-        <DropdownMenuItem
-         className="flex items-center justify-end gap-2">
-            
-          <LogoutToggle  text />
+        <DropdownMenuItem className="flex items-center justify-end gap-2">
+          <LogoutToggle text />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
