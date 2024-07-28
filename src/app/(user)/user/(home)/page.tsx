@@ -1,10 +1,7 @@
-
-import React from 'react'
+import UserPanelMainContent from "@/components/user/UserPanelMainContent";
 
 const page = () => {
-  return (
-    <div>user panel</div>
-  )
-}
+  return <UserPanelMainContent />;
+};
 
-export default page
+export default page;
