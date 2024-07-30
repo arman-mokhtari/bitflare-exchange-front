@@ -26,51 +26,62 @@ const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
         <TooltipProvider>
           <TabsList>
             <Tooltip>
-              <TooltipTrigger asChild>
-                <TabsTrigger
-                  value="overview"
-                  className="flex items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
-                >
-                  <LayoutDashboardIcon className="size-5" />
-                  <span className="hidden md:block">نمای کلی</span>
-                </TabsTrigger>
-              </TooltipTrigger>
+              <TabsTrigger
+                value="overview"
+                className="flex items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
+              >
+                <TooltipTrigger asChild>
+                  <div className="flex items-center justify-center md:gap-1">
+                    <LayoutDashboardIcon className="size-5" />
+                    <span className="hidden md:block">نمای کلی</span>
+                  </div>
+                </TooltipTrigger>
+              </TabsTrigger>
+
               <TooltipContent side="right">نمای کلی</TooltipContent>
             </Tooltip>
             <Tooltip>
-              <TooltipTrigger asChild>
-                <TabsTrigger
-                  value="analytics"
-                  className="flex  items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
-                >
-                  <InfoIcon className="size-5" />
-                  <span className="hidden md:block">ارزهای من</span>
-                </TabsTrigger>
-              </TooltipTrigger>
+              <TabsTrigger
+                value="analytics"
+                className="flex  items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
+              >
+                <TooltipTrigger asChild>
+                  <div className="flex items-center justify-center md:gap-1">
+                    <InfoIcon className="size-5" />
+                    <span className="hidden md:block">ارزهای من</span>
+                  </div>
+                </TooltipTrigger>
+              </TabsTrigger>
+
               <TooltipContent side="right">ارزهای من</TooltipContent>
             </Tooltip>
             <Tooltip>
-              <TooltipTrigger asChild>
-                <TabsTrigger
-                  value="settings"
-                  className="flex  items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
-                >
-                  <SettingsIcon className="size-5" />
-                  <span className="hidden md:block">تنظیمات</span>
-                </TabsTrigger>
-              </TooltipTrigger>
+              <TabsTrigger
+                value="settings"
+                className="flex  items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
+              >
+                <TooltipTrigger asChild>
+                  <div className="flex items-center justify-center md:gap-1">
+                    <SettingsIcon className="size-5" />
+                    <span className="hidden md:block">تنظیمات</span>
+                  </div>
+                </TooltipTrigger>
+              </TabsTrigger>
+
               <TooltipContent side="right">تنظیمات</TooltipContent>
             </Tooltip>
             <Tooltip>
-              <TooltipTrigger asChild>
-                <TabsTrigger
-                  value="billing"
-                  className="flex items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
-                >
-                  <CreditCardIcon className="size-5" />
-                  <span className="hidden md:block">فاکتورها</span>
-                </TabsTrigger>
-              </TooltipTrigger>
+              <TabsTrigger
+                value="billing"
+                className="flex items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
+              >
+                <TooltipTrigger asChild>
+                  <div className="flex items-center justify-center md:gap-1">
+                    <CreditCardIcon className="size-5" />
+                    <span className="hidden md:block">فاکتورها</span>
+                  </div>
+                </TooltipTrigger>
+              </TabsTrigger>
               <TooltipContent side="right">فاکتورها</TooltipContent>
             </Tooltip>
           </TabsList>
