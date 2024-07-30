@@ -11,27 +11,28 @@ import {
   LayoutDashboardIcon,
   SettingsIcon,
 } from "lucide-react";
-import UserDropdown from "./UserDropdown";
+
 import { TabsList, TabsTrigger } from "@/components/ui/tabs";
+import MainLogo from "@/components/common/MainLogo";
 
 const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
   return (
     <aside className={`flex flex-row ${otherClasses}`}>
-      <nav className="flex flex-row items-center gap-4 px-2 sm:flex-col sm:py-5">
+      <nav className="sticky top-0 flex flex-row items-center gap-4 px-3 sm:flex-col sm:py-5 md:px-5">
+        <div className="hidden sm:block">
+          <MainLogo />
+        </div>
+
         <TooltipProvider>
-          <div className="group flex shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base">
-            <UserDropdown />
-            <span className="sr-only">اکانت کاربری</span>
-          </div>
           <TabsList>
             <Tooltip>
               <TooltipTrigger asChild>
                 <TabsTrigger
                   value="overview"
-                  className="flex  items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground "
+                  className="flex items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
                 >
                   <LayoutDashboardIcon className="size-5" />
-                  <span className="sr-only">Overview</span>
+                  <span className="hidden md:block">نمای کلی</span>
                 </TabsTrigger>
               </TooltipTrigger>
               <TooltipContent side="right">نمای کلی</TooltipContent>
@@ -40,10 +41,10 @@ const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
               <TooltipTrigger asChild>
                 <TabsTrigger
                   value="analytics"
-                  className="flex  items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground "
+                  className="flex  items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
                 >
                   <InfoIcon className="size-5" />
-                  <span className="sr-only">Analytics</span>
+                  <span className="hidden md:block">ارزهای من</span>
                 </TabsTrigger>
               </TooltipTrigger>
               <TooltipContent side="right">ارزهای من</TooltipContent>
@@ -52,10 +53,10 @@ const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
               <TooltipTrigger asChild>
                 <TabsTrigger
                   value="settings"
-                  className="flex  items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground "
+                  className="flex  items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
                 >
                   <SettingsIcon className="size-5" />
-                  <span className="sr-only">Settings</span>
+                  <span className="hidden md:block">تنظیمات</span>
                 </TabsTrigger>
               </TooltipTrigger>
               <TooltipContent side="right">تنظیمات</TooltipContent>
@@ -64,13 +65,13 @@ const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
               <TooltipTrigger asChild>
                 <TabsTrigger
                   value="billing"
-                  className="flex items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground "
+                  className="flex items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
                 >
                   <CreditCardIcon className="size-5" />
-                  <span className="sr-only">Billing</span>
+                  <span className="hidden md:block">فاکتورها</span>
                 </TabsTrigger>
               </TooltipTrigger>
-              <TooltipContent side="right">فاکتورهای من</TooltipContent>
+              <TooltipContent side="right">فاکتورها</TooltipContent>
             </Tooltip>
           </TabsList>
         </TooltipProvider>
