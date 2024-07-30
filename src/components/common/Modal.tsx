@@ -18,6 +18,7 @@ export function Modal({
   cancelButtonText,
   actionButtonText,
   actionHandler,
+  actionButtonOtherClasses
 }: {
   modalTitle: string;
   modalDescription?: string;
@@ -25,6 +26,7 @@ export function Modal({
   cancelButtonText: string;
   actionButtonText: string;
   actionHandler: any;
+  actionButtonOtherClasses?: string;
 }) {
   return (
     <AlertDialog>
@@ -44,7 +46,7 @@ export function Modal({
         <AlertDialogFooter>
           <AlertDialogCancel>{cancelButtonText}</AlertDialogCancel>
           <AlertDialogAction
-            className=" hover:bg-red-700 dark:hover:bg-red-500"
+            className={`hover:bg-red-700 dark:hover:bg-red-500 ${actionButtonOtherClasses}`}
             onClick={actionHandler}
           >
             {actionButtonText}

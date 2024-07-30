@@ -42,3 +42,9 @@ export interface RequestData {
     name?: string;
     age?: number;
   }
+
+  export type MyCurrency = {
+    id: string;
+    amount: number;
+    currency: string;
+  };

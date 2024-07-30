@@ -1,3 +1,4 @@
+import { MyCurrency } from "@/types";
 
 export const gridItems = [
   {
@@ -385,5 +386,133 @@ export const navigation = [
     path: "/admin",
     isDrapdown: false,
     isCloseOnClick: true,
+  },
+];
+
+export const currencyData: MyCurrency[] = [
+  {
+    id: "m5gr84i9",
+    amount: 316,
+    currency: "بیت‌کوین",
+  },
+  {
+    id: "3u1reuv4",
+    amount: 242,
+    currency: "اتریوم",
+  },
+  {
+    id: "derv1ws0",
+    amount: 837,
+    currency: "لایت‌کوین",
+  },
+  {
+    id: "5kma53ae",
+    amount: 874,
+    currency: "ریپل",
+  },
+  {
+    id: "bhqecj4p",
+    amount: 721,
+    currency: "دوج‌کوین",
+  },
+  {
+    id: "js5gw3e1",
+    amount: 512,
+    currency: "بایننس کوین",
+  },
+  {
+    id: "kz9x7h3l",
+    amount: 150,
+    currency: "کاردانو",
+  },
+  {
+    id: "hy7m4k8v",
+    amount: 680,
+    currency: "پولکادات",
+  },
+  {
+    id: "vc8n9w4j",
+    amount: 299,
+    currency: "سولانا",
+  },
+  {
+    id: "lw3s5b2p",
+    amount: 430,
+    currency: "چین لینک",
+  },
+  {
+    id: "mq2r7v5z",
+    amount: 600,
+    currency: "استلار",
+  },
+  {
+    id: "qw8t3l1m",
+    amount: 745,
+    currency: "ترون",
+  },
+  {
+    id: "zr4k9p8d",
+    amount: 390,
+    currency: "یونی سواپ",
+  },
+  {
+    id: "jt7w2f4r",
+    amount: 520,
+    currency: "آوالانچ",
+  },
+  {
+    id: "py6l8h3c",
+    amount: 815,
+    currency: "تتا",
+  },
+  {
+    id: "sf9t6b7x",
+    amount: 410,
+    currency: "ماتیک",
+  },
+  {
+    id: "bk8j3m2z",
+    amount: 375,
+    currency: "فایل کوین",
+  },
+  {
+    id: "mv3p6k5w",
+    amount: 555,
+    currency: "دش",
+  },
+  {
+    id: "ph4l2j7t",
+    amount: 230,
+    currency: "زد کش",
+  },
+  {
+    id: "rc8n1m6q",
+    amount: 695,
+    currency: "مونرو",
+  },
+  {
+    id: "tg5k8v9b",
+    amount: 850,
+    currency: "تزوس",
+  },
+  {
+    id: "wf7m4b2y",
+    amount: 215,
+    currency: "وی چین",
+  },
+  {
+    id: "ql2j8v9d",
+    amount: 475,
+    currency: "ایاس",
+  },
+  {
+    id: "hm9k3f1r",
+    amount: 330,
+    currency: "نئو",
+  },
+  {
+    id: "nk7t4l3m",
+    amount: 250,
+    currency: "آیوتا",
   },
 ];

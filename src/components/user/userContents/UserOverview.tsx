@@ -5,7 +5,7 @@ import {
   toPersianNumbersWithComma,
 } from "@/utils/toPersianNumbers";
 import { DollarSignIcon, FileTextIcon, TagIcon, Verified } from "lucide-react";
-import { DigitalCurrencyDataTable } from "./OverviewDataTable";
+import { DigitalCurrencyDataTable } from "./userDataTabel/OverviewDataTable";
 interface User {
   name: string;
   createdAt: string;
