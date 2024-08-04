@@ -4,12 +4,12 @@ import UserDetailTabReq from "./UserDetailTabReq";
 import UserWithdrawTabReq from "./UserWithdrawTabReq";
 
 export function CurrencyRequestTab({ rowData }: { rowData: MyCurrency }) {
-  console.log("rowData: ", rowData);
+
   return (
     <Tabs dir="rtl" defaultValue="detail" className="">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="detail">جزئیات</TabsTrigger>
-        <TabsTrigger value="withdraw">برداشت</TabsTrigger>
+        <TabsTrigger disabled value="withdraw">برداشت</TabsTrigger>
       </TabsList>
 
       <TabsContent value="detail">

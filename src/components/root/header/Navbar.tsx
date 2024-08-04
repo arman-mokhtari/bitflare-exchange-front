@@ -10,6 +10,7 @@ import { useGetUser } from "@/hooks/useAuth";
 import { navigation } from "@/data";
 import { UserDropdownMenu } from "@/components/common/UserDropdownMenu";
 import { Skeleton } from "@/components/ui/skeleton";
+import { ChevronDownIcon, ChevronUpIcon, MenuIcon, XIcon } from "lucide-react";
 
 interface DrapdownState {
   idx: number | null;
@@ -53,6 +54,8 @@ const Navbar = ({ className }: { className?: string }) => {
     setState(!state);
   };
 
+  // todo: Use better pracitices for navigation loop
+
   return (
     <div
       className={cn(
@@ -76,31 +79,9 @@ const Navbar = ({ className }: { className?: string }) => {
                 onClick={() => setState(!state)}
               >
                 {state ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="size-6"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  <XIcon className="size-6" />
                 ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm8.25 5.25a.75.75 0 01.75-.75h8.25a.75.75 0 010 1.5H12a.75.75 0 01-.75-.75z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  <MenuIcon className="size-6" />
                 )}
               </button>
             </div>
@@ -123,7 +104,7 @@ const Navbar = ({ className }: { className?: string }) => {
               {navigation.map((item, idx) => {
                 return (
                   <li key={idx}>
-                    {item.isDrapdown ? (
+                    {item.isDropdown ? (
                       <div className="md:mr-6">
                         <button
                           className="flex w-full items-center justify-between gap-1 text-gray-700 hover:text-blue-600 dark:text-white"
@@ -137,34 +118,34 @@ const Navbar = ({ className }: { className?: string }) => {
                           {item.title}
                           {drapdownState.idx === idx &&
                           drapdownState.isActive ? (
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              className="size-5"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
+                            <ChevronUpIcon className="size-4" />
                           ) : (
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              className="size-5"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
+                            <ChevronDownIcon className="size-4" />
                           )}
                         </button>
                       </div>
+                    ) : item.isActiveUser ? (
+                      user &&
+                      user.isActive && (
+                        <Link
+                          href={item.path}
+                          className="block text-gray-700 hover:text-blue-600 dark:text-white"
+                          onClick={() => stateHandler(item)}
+                        >
+                          {item.title}
+                        </Link>
+                      )
+                    ) : item.isAdmin ? (
+                      user &&
+                      user.role === "ADMIN" && (
+                        <Link
+                          href={item.path}
+                          className="block text-gray-700 hover:text-blue-600 dark:text-white"
+                          onClick={() => stateHandler(item)}
+                        >
+                          {item.title}
+                        </Link>
+                      )
                     ) : (
                       <Link
                         href={item.path}
@@ -174,7 +155,7 @@ const Navbar = ({ className }: { className?: string }) => {
                         {item.title}
                       </Link>
                     )}
-                    {item.isDrapdown &&
+                    {item.isDropdown &&
                     drapdownState.idx === idx &&
                     drapdownState.isActive ? (
                       <div className="inset-x-0 top-20 mt-6 w-full bg-white dark:bg-black-100 md:absolute md:mt-0 md:border-y md:shadow-md">

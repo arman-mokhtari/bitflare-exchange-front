@@ -20,7 +20,7 @@ const UserWithdrawTabReq = ({ rowData }: { rowData: MyCurrency }) => {
     setSliderValue(value[0]);
   };
 
-  const maxSliderValue = rowData.amount;
+  const maxSliderValue = rowData.quantity;
   const sliderPercentage = (sliderValue / maxSliderValue) * 100;
 
   const withdrawHandler = async () => {
@@ -35,7 +35,7 @@ const UserWithdrawTabReq = ({ rowData }: { rowData: MyCurrency }) => {
       <Separator className="mb-2" />
       <CardContent className="space-y-2 p-2">
         <p className=" font-medium">
-          تعداد موجودی: {toPersianNumbers(rowData.amount)}
+          تعداد موجودی: {toPersianNumbers(rowData.quantity)}
         </p>
         <Slider
           onValueChange={handleSliderChange}

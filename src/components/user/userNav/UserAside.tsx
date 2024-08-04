@@ -7,9 +7,9 @@ import {
 
 import {
   CreditCardIcon,
-  InfoIcon,
   LayoutDashboardIcon,
   SettingsIcon,
+  ShoppingCartIcon,
 } from "lucide-react";
 
 import { TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -33,12 +33,12 @@ const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
                 <TooltipTrigger asChild>
                   <div className="flex items-center justify-center md:gap-1">
                     <LayoutDashboardIcon className="size-5" />
-                    <span className="hidden md:block">نمای کلی</span>
+                    <span className="hidden md:block">داشبورد</span>
                   </div>
                 </TooltipTrigger>
               </TabsTrigger>
 
-              <TooltipContent side="right">نمای کلی</TooltipContent>
+              <TooltipContent side="right">داشبورد</TooltipContent>
             </Tooltip>
             <Tooltip>
               <TabsTrigger
@@ -47,13 +47,13 @@ const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
               >
                 <TooltipTrigger asChild>
                   <div className="flex items-center justify-center md:gap-1">
-                    <InfoIcon className="size-5" />
-                    <span className="hidden md:block">ارزهای من</span>
+                    <ShoppingCartIcon className="size-5" />
+                    <span className="hidden md:block">خرید ارز</span>
                   </div>
                 </TooltipTrigger>
               </TabsTrigger>
 
-              <TooltipContent side="right">ارزهای من</TooltipContent>
+              <TooltipContent side="right">خرید ارز دیجیتال</TooltipContent>
             </Tooltip>
             <Tooltip>
               <TabsTrigger

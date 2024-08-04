@@ -6,6 +6,7 @@ import {
 } from "@/utils/toPersianNumbers";
 import { DollarSignIcon, FileTextIcon, TagIcon, Verified } from "lucide-react";
 import { DigitalCurrencyDataTable } from "./userDataTabel/OverviewDataTable";
+import { MyCurrency } from "@/types";
 interface User {
   name: string;
   createdAt: string;
@@ -28,9 +29,10 @@ interface Payment {
 interface UserOverviewProps {
   user: User;
   payments: Payment[];
+  currencies: MyCurrency[];
 }
 
-const UserOverview = ({ user, payments }: UserOverviewProps) => {
+const UserOverview = ({ user, payments, currencies }: UserOverviewProps) => {
   const splitName = user?.name?.split(" ")[0];
 
   const totalPurchase = payments.reduce(
@@ -125,14 +127,14 @@ const UserOverview = ({ user, payments }: UserOverviewProps) => {
           </div>
         </CardContent>
       </Card>
+
       <Card className="lg:col-span-5">
-      <CardHeader>
+        <CardHeader>
           <CardTitle className="text-xl">ارزهای من</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col gap-6">
-           <DigitalCurrencyDataTable />
+          <DigitalCurrencyDataTable  currencies={currencies} />
         </CardContent>
-       
       </Card>
     </div>
   );

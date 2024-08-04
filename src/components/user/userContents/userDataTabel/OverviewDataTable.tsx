@@ -30,18 +30,23 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { toPersianNumbers } from "@/utils/toPersianNumbers";
-import { currencyData } from "@/data";
 import { userCurrencyColumns } from "@/constants/currency/userCurrencyColumns";
 import { useState } from "react";
+import { MyCurrency } from "@/types";
 
-export function DigitalCurrencyDataTable() {
+// todo change user interface to real one
+
+export function DigitalCurrencyDataTable({currencies}: {currencies: MyCurrency[]}) {
+  
+
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
 
+
   const table = useReactTable({
-    data: currencyData,
+    data: currencies,
     columns: userCurrencyColumns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
@@ -60,8 +65,8 @@ export function DigitalCurrencyDataTable() {
   });
 
   const columnDisplayNames: Record<string, string> = {
-    currency: "نام ارز",
-    amount: "موجودی",
+    title: "نام ارز",
+    quantity: "موجودی",
     actions: "عملیات",
   };
 
@@ -71,10 +76,10 @@ export function DigitalCurrencyDataTable() {
         <Input
           placeholder="نام ارز..."
           value={
-            (table.getColumn("currency")?.getFilterValue() as string) ?? ""
+            (table.getColumn("title")?.getFilterValue() as string) ?? ""
           }
           onChange={(event) =>
-            table.getColumn("currency")?.setFilterValue(event.target.value)
+            table.getColumn("title")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />

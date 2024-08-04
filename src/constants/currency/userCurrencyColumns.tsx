@@ -8,12 +8,12 @@ import UserCurrencyRequestDialog from "@/components/user/userContents/userDataTa
 
 export const userCurrencyColumns: ColumnDef<MyCurrency>[] = [
   {
-    accessorKey: "currency",
+    accessorKey: "title",
     header: () => <div className="text-right">نام ارز</div>,
-    cell: ({ row }) => <div>{row.getValue("currency")}</div>,
+    cell: ({ row }) => <div className="font-medium">{row.getValue("title")}</div>,
   },
   {
-    accessorKey: "amount",
+    accessorKey: "quantity",
     header: ({ column }) => {
       return (
         <div className="text-right">
@@ -29,17 +29,23 @@ export const userCurrencyColumns: ColumnDef<MyCurrency>[] = [
       );
     },
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
+      const amount = parseFloat(row.getValue("quantity"));
 
-      const formatted = new Intl.NumberFormat("fa-IR", {
-        style: "currency",
-        currency: "IRR",
-      }).format(amount);
-      const parts = formatted.split("\u00A0");
-      const newFormat = parts.reverse().join(" ");
+      const formatted = new Intl.NumberFormat("fa-IR").format(amount);
 
-      return <div className="text-right font-medium">{newFormat}</div>;
+      return <div className="text-right font-medium">{formatted}</div>;
     },
+  },
+  {
+    accessorKey: "status",
+    header: () => <div className="text-right">وضعیت</div>,
+    cell: ({ row }) => (
+      <div className="text-sm">
+        {row.getValue("status") === "sent"
+          ? "ارسال شده"
+          : "انتظار"}
+      </div>
+    ),
   },
   {
     id: "actions",

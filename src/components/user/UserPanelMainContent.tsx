@@ -22,16 +22,18 @@ import { useGetUser } from "@/hooks/useAuth";
 
 export default function Component() {
   const { data, isLoading } = useGetUser();
-  const { user, payments } = data || {};
+  const { user, payments, combinedData } = data || {};
 
   if (isLoading) return <div>Loading...</div>;
+
   const modifiedPayments = payments?.filter(
     (payment: { status: string }) => payment.status === "COMPLETED"
   );
+console.log("combinedData: ",combinedData)
   return (
     <div className="grid w-full gap-4">
       <TabsContent value="overview">
-        <UserOverview user={user} payments={modifiedPayments} />
+        <UserOverview user={user} payments={modifiedPayments} currencies={combinedData} />
       </TabsContent>
 
       <TabsContent value="analytics">

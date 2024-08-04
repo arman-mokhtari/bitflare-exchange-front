@@ -1,5 +1,3 @@
-import { MyCurrency } from "@/types";
-
 export const gridItems = [
   {
     id: 1,
@@ -263,48 +261,49 @@ export const testimonials = [
 
 export const team = [
   {
-      avatar: "https://images.unsplash.com/photo-1511485977113-f34c92461ad9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
-      name: "Martiana dialan",
-      title: "Product designer",
-      linkedin: "javascript:void(0)",
-      twitter: "javascript:void(0)",
+    avatar:
+      "https://images.unsplash.com/photo-1511485977113-f34c92461ad9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+    name: "Martiana dialan",
+    title: "Product designer",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
   },
   {
-      avatar: "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg",
-      name: "Micheal colorand",
-      title: "Software engineer",
-      linkedin: "javascript:void(0)",
-      twitter: "javascript:void(0)",
+    avatar: "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg",
+    name: "Micheal colorand",
+    title: "Software engineer",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
   },
   {
-      avatar: "https://randomuser.me/api/portraits/women/79.jpg",
-      name: "Brown Luis",
-      title: "Full stack engineer",
-      linkedin: "javascript:void(0)",
-      twitter: "javascript:void(0)",
+    avatar: "https://randomuser.me/api/portraits/women/79.jpg",
+    name: "Brown Luis",
+    title: "Full stack engineer",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
   },
   {
-      avatar: "https://randomuser.me/api/portraits/women/63.jpg",
-      name: "Lysa sandiago",
-      title: "Head of designers",
-      linkedin: "javascript:void(0)",
-      twitter: "javascript:void(0)",
+    avatar: "https://randomuser.me/api/portraits/women/63.jpg",
+    name: "Lysa sandiago",
+    title: "Head of designers",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
   },
   {
-      avatar: "https://randomuser.me/api/portraits/men/86.jpg",
-      name: "Daniel martin",
-      title: "Product designer",
-      linkedin: "javascript:void(0)",
-      twitter: "javascript:void(0)",
+    avatar: "https://randomuser.me/api/portraits/men/86.jpg",
+    name: "Daniel martin",
+    title: "Product designer",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
   },
   {
-      avatar: "https://randomuser.me/api/portraits/men/46.jpg",
-      name: "Vicky tanson",
-      title: "Product manager",
-      linkedin: "javascript:void(0)",
-      twitter: "javascript:void(0)",
+    avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+    name: "Vicky tanson",
+    title: "Product manager",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
   },
-]
+];
 
 export const dropdownNavs = [
   {
@@ -314,13 +313,13 @@ export const dropdownNavs = [
         title: "تحلیل‌ها",
         desc: "ابزارهای تحلیل داده",
         path: "/",
-        icon: ""
+        icon: "",
       },
       {
         title: "گزارشات",
         desc: "ایجاد و مشاهده گزارشات",
         path: "/",
-        icon: ""
+        icon: "",
       },
     ],
   },
@@ -331,13 +330,13 @@ export const dropdownNavs = [
         title: "وبلاگ",
         desc: "مطالب و مقالات جدید",
         path: "/",
-        icon: ""
+        icon: "",
       },
       {
         title: "جامعه",
         desc: "ارتباط با کاربران",
         path: "/",
-        icon: ""
+        icon: "",
       },
     ],
   },
@@ -348,48 +347,63 @@ export const dropdownNavs = [
         title: "درباره ما",
         desc: "اطلاعات درباره بیتفلر",
         path: "/about",
-        icon: ""
+        icon: "",
       },
       {
         title: "فرصت‌های شغلی",
         desc: "همکاری با ما",
         path: "/",
-        icon: ""
+        icon: "",
       },
     ],
   },
 ];
 
 export const navigation = [
-  { title: "خانه", path: "/", isDrapdown: false, isCloseOnClick: true },
+  {
+    title: "خانه",
+    path: "/",
+    isDropdown: false,
+    isCloseOnClick: true,
+    isActiveUser: false,
+    isAdmin: false,
+  },
   {
     title: "امکانات",
     path: "/",
-    isDrapdown: true,
+    isDropdown: true,
     navs: dropdownNavs,
     isCloseOnClick: false,
+    isActiveUser: false,
+    isAdmin: false,
   },
   {
     title: "ارتباط با ما",
     path: "/contact",
-    isDrapdown: false,
+    isDropdown: false,
     isCloseOnClick: true,
+    isActiveUser: false,
+    isAdmin: false,
   },
   {
     title: "پنل کاربر",
     path: "/user",
-    isDrapdown: false,
+    isDropdown: false,
     isCloseOnClick: true,
+    isActiveUser: true,
+    isAdmin: false,
   },
   {
     title: "پنل ادمین",
     path: "/admin",
-    isDrapdown: false,
+    isDropdown: false,
     isCloseOnClick: true,
+    isActiveUser: false,
+    isAdmin: true,
   },
 ];
 
-export const currencyData: MyCurrency[] = [
+export const currencyData: any = [
   {
     id: "m5gr84i9",
     amount: 316,
