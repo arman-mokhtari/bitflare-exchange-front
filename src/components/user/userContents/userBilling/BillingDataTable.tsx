@@ -64,7 +64,7 @@ export function BillingDataTable({ payments }: { payments: any }) {
     invoiceNumber: "فاکتور",
     title: "نام ارز",
     quantity: "تعداد",
-    total:"مجموع",
+    total: "مجموع",
     status: "وضعیت",
   };
 
@@ -93,7 +93,7 @@ export function BillingDataTable({ payments }: { payments: any }) {
                 .map((column) => {
                   return (
                     <DropdownMenuCheckboxItem
-                      className="flex justify-end"
+                      className={`flex justify-end ${column.id === "invoiceNumber" || column.id === "quantity" ? "hidden lg:flex" : ""}`}
                       key={column.id}
                       checked={column.getIsVisible()}
                       onCheckedChange={(value) =>
@@ -118,8 +118,8 @@ export function BillingDataTable({ payments }: { payments: any }) {
                     <TableHead
                       key={header.id}
                       className={
-                        header.column.id === "invoiceNumber"
-                          ? "hidden md:table-cell"
+                        header.column.id === "invoiceNumber" || header.column.id === "quantity"
+                          ? "hidden lg:table-cell"
                           : ""
                       }
                     >
@@ -146,8 +146,8 @@ export function BillingDataTable({ payments }: { payments: any }) {
                     <TableCell
                       key={cell.id}
                       className={
-                        cell.column.id === "invoiceNumber"
-                          ? "hidden md:table-cell"
+                        cell.column.id === "invoiceNumber" || cell.column.id === "quantity"
+                          ? "hidden lg:table-cell"
                           : ""
                       }
                     >
