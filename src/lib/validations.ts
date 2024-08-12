@@ -142,3 +142,22 @@ export const ResetPassTokenSchema = z
     path: ["confirmPassword"],
   });
 
+  export const AddToCartSchema = z.object({
+    productId: z
+      .string({
+        required_error: "لطفا یک ارز دیجیتال را انتخاب کنید!",
+      }),
+    quantity: z
+      .number({
+        message: "تعداد صحیح را وارد کنید!",
+      })
+      .min(50, {
+        message: "تعداد باید بیشتر از 50 باشد!",
+      })
+  });
+
+  export const PaymentSchema = z.object({
+    wallet: z
+      .string()
+      .regex(/^[a-zA-Z0-9]{26,42}$/, "آدرس کیف پول معتبر نیست!"),
+  });

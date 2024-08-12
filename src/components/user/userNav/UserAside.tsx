@@ -42,7 +42,7 @@ const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
             </Tooltip>
             <Tooltip>
               <TabsTrigger
-                value="analytics"
+                value="shoppingCart"
                 className="flex  items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
               >
                 <TooltipTrigger asChild>
@@ -54,6 +54,20 @@ const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
               </TabsTrigger>
 
               <TooltipContent side="right">خرید ارز دیجیتال</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TabsTrigger
+                value="billing"
+                className="flex items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
+              >
+                <TooltipTrigger asChild>
+                  <div className="flex items-center justify-center md:gap-1">
+                    <CreditCardIcon className="size-5" />
+                    <span className="hidden md:block">فاکتورها</span>
+                  </div>
+                </TooltipTrigger>
+              </TabsTrigger>
+              <TooltipContent side="right">فاکتورها</TooltipContent>
             </Tooltip>
             <Tooltip>
               <TabsTrigger
@@ -69,20 +83,6 @@ const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
               </TabsTrigger>
 
               <TooltipContent side="right">تنظیمات</TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TabsTrigger
-                value="billing"
-                className="flex items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
-              >
-                <TooltipTrigger asChild>
-                  <div className="flex items-center justify-center md:gap-1">
-                    <CreditCardIcon className="size-5" />
-                    <span className="hidden md:block">فاکتورها</span>
-                  </div>
-                </TooltipTrigger>
-              </TabsTrigger>
-              <TooltipContent side="right">فاکتورها</TooltipContent>
             </Tooltip>
           </TabsList>
         </TooltipProvider>

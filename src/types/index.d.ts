@@ -54,3 +54,33 @@ export type MyCurrency = {
   updatedAt: string;
   payments: any[];
 };
+
+export interface ProductDetail {
+  title: string;
+  quantity: number;
+}
+
+export interface Cart {
+  productDetail: ProductDetail[];
+  payDetail: {
+    totalPrice: number;
+  };
+}
+
+export interface UserPayment {
+  invoiceNumber: string;
+  cart: Cart;
+  status: string;
+}
+
+export interface Product {
+  _id: string;
+  title: string;
+  price: number;
+  description: string;
+}
+
+export type AddToCartProps = {
+  productId: string;
+  quantity: number;
+};

@@ -3,6 +3,7 @@ import "../globals.css";
 import React from "react";
 import UserAside from "@/components/user/userNav/UserAside";
 import MainLogo from "@/components/common/MainLogo";
+import { StepProvider } from "@/providers/StepContext";
 
 export default function RootLayout({
   children,
@@ -10,10 +11,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
       <div className="min-h-screen">
         <Tabs
-          defaultValue="overview"
+          defaultValue="billing"
           dir="rtl"
           className="flex min-h-screen w-full bg-muted/40"
         >
@@ -24,10 +24,13 @@ export default function RootLayout({
               <MainLogo />
               <UserAside otherClasses="flex flex-row" />
             </header>
-            <main className="flex items-start p-4">{children}</main>
+            <StepProvider>
+                          <main className="flex items-start p-4">{children}</main>
+
+            </StepProvider>
+
           </div>
         </Tabs>
       </div>
-    </div>
   );
 }

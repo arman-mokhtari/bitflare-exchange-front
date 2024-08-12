@@ -4,13 +4,15 @@ import { ArrowUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { MyCurrency } from "@/types";
-import UserCurrencyRequestDialog from "@/components/user/userContents/userDataTabel/UserCurrencyRequestDialog";
+import UserCurrencyRequestDialog from "@/components/user/userContents/userOverview/UserCurrencyRequestDialog";
 
 export const userCurrencyColumns: ColumnDef<MyCurrency>[] = [
   {
     accessorKey: "title",
     header: () => <div className="text-right">نام ارز</div>,
-    cell: ({ row }) => <div className="font-medium">{row.getValue("title")}</div>,
+    cell: ({ row }) => (
+      <div className="font-medium">{row.getValue("title")}</div>
+    ),
   },
   {
     accessorKey: "quantity",
@@ -41,9 +43,7 @@ export const userCurrencyColumns: ColumnDef<MyCurrency>[] = [
     header: () => <div className="text-right">وضعیت</div>,
     cell: ({ row }) => (
       <div className="text-sm">
-        {row.getValue("status") === "sent"
-          ? "ارسال شده"
-          : "انتظار"}
+        {row.getValue("status") === "sent" ? "ارسال شده" : "انتظار"}
       </div>
     ),
   },

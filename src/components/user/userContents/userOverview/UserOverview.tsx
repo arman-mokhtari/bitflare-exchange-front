@@ -5,8 +5,9 @@ import {
   toPersianNumbersWithComma,
 } from "@/utils/toPersianNumbers";
 import { DollarSignIcon, FileTextIcon, TagIcon, Verified } from "lucide-react";
-import { DigitalCurrencyDataTable } from "./userDataTabel/OverviewDataTable";
+
 import { MyCurrency } from "@/types";
+import { DigitalCurrencyDataTable } from "./OverviewDataTable";
 interface User {
   name: string;
   createdAt: string;
@@ -48,7 +49,6 @@ const UserOverview = ({ user, payments, currencies }: UserOverviewProps) => {
   }, 0);
 
   const numberOfPayments = payments?.length;
-
   return (
     <div className="grid gap-4 lg:grid-cols-5">
       <Card className="lg:col-span-2">
@@ -133,7 +133,7 @@ const UserOverview = ({ user, payments, currencies }: UserOverviewProps) => {
           <CardTitle className="text-xl">ارزهای من</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col gap-6">
-          <DigitalCurrencyDataTable  currencies={currencies} />
+          <DigitalCurrencyDataTable currencies={currencies} />
         </CardContent>
       </Card>
     </div>
