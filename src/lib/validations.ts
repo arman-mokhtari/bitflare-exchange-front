@@ -142,22 +142,81 @@ export const ResetPassTokenSchema = z
     path: ["confirmPassword"],
   });
 
-  export const AddToCartSchema = z.object({
-    productId: z
-      .string({
-        required_error: "لطفا یک ارز دیجیتال را انتخاب کنید!",
-      }),
-    quantity: z
-      .number({
-        message: "تعداد صحیح را وارد کنید!",
-      })
-      .min(50, {
-        message: "تعداد باید بیشتر از 50 باشد!",
-      })
-  });
+export const AddToCartSchema = z.object({
+  productId: z.string({
+    required_error: "لطفا یک ارز دیجیتال را انتخاب کنید!",
+  }),
+  quantity: z
+    .number({
+      message: "تعداد صحیح را وارد کنید!",
+    })
+    .min(50, {
+      message: "تعداد باید بیشتر از 50 باشد!",
+    }),
+});
 
-  export const PaymentSchema = z.object({
-    wallet: z
-      .string()
-      .regex(/^[a-zA-Z0-9]{26,42}$/, "آدرس کیف پول معتبر نیست!"),
+export const PaymentSchema = z.object({
+  wallet: z.string().regex(/^[a-zA-Z0-9]{26,42}$/, "آدرس کیف پول معتبر نیست!"),
+});
+
+export const ProfileUpdateSchema = z.object({
+  name: z
+    .string({ message: "نام خود را وارد کنید" })
+    .min(3, {
+      message: "نام حداقل باید 3 کاراکتر باشد",
+    })
+    .max(50, {
+      message: "نام حداکثر باید 50 کاراکتر باشد",
+    }),
+  email: z
+    .string({ message: "آدرس ایمیل خود را وارد کنید" })
+    .min(1, { message: "آدرس ایمیل خود را وارد کنید" })
+    .email("فرمت ایمیل صحیح نیست"),
+  phoneNumber: z.string().optional(),
+  biography: z.string().optional(),
+  enteredCaptcha: z
+    .string({ message: "تایید کنید ربات نیستید" })
+    .min(5, {
+      message: "اعتبارسنجی باید 5 کاراکتر باشد",
+    })
+    .max(5, {
+      message: "اعتبارسنجی باید 5 کاراکتر باشد",
+    }),
+});
+
+export const UserPasswordUpdateSchema = z
+  .object({
+    currentPassword: z
+      .string({ message: "کلمه عبور فعلی را وارد کنید" })
+      .min(1, {
+        message: "کلمه عبور فعلی را وارد کنید",
+      }),
+    newPassword: z
+      .string({ message: "کلمه عبور را وارد کنید" })
+      .min(5, {
+        message: "کلمه عبور حداقل باید 5 کاراکتر باشد",
+      })
+      .max(50, {
+        message: "کلمه عبور حداکثر باید 50 کاراکتر باشد",
+      }),
+    confirmNewPassword: z
+      .string({ message: "تکرار کلمه عبور را وارد کنید" })
+      .min(5, {
+        message: "تکرار کلمه عبور حداقل باید 5 کاراکتر باشد",
+      })
+      .max(50, {
+        message: "تکرار کلمه عبور حداکثر باید 50 کاراکتر باشد",
+      }),
+    enteredCaptcha: z
+      .string({ message: "تایید کنید ربات نیستید" })
+      .min(5, {
+        message: "اعتبارسنجی باید 5 کاراکتر باشد",
+      })
+      .max(5, {
+        message: "اعتبارسنجی باید 5 کاراکتر باشد",
+      }),
+  })
+  .refine((data) => data.newPassword === data.confirmNewPassword, {
+    message: "کلمه عبور جدید و تکرار آن باید مطابقت داشته باشند",
+    path: ["confirmNewPassword"],
   });

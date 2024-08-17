@@ -34,8 +34,13 @@ export interface AuthenticateUserData {
 }
 
 export interface ChangePasswordData {
-  currentPassword: string;
-  newPassword: string;
+  userId: string;
+  data:{
+    currentPassword: string;
+    newPassword: string;
+    confirmNewPassword: string;
+    enteredCaptcha: string;
+  }
 }
 
 export interface UpdateProfileData {

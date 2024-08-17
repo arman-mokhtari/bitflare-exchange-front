@@ -35,10 +35,7 @@ export async function authenticateUser(
 export async function changeUserPassword({
   userId,
   data,
-}: {
-  userId: string;
-  data: ChangePasswordData;
-}): Promise<any> {
+}: ChangePasswordData): Promise<any> {
   return http
     .patch(`/user/password-change/${userId}`, data)
     .then(({ data }) => data.data);

@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
       <div className="min-h-screen">
         <Tabs
-          defaultValue="billing"
+          defaultValue="overview"
           dir="rtl"
           className="flex min-h-screen w-full bg-muted/40"
         >
