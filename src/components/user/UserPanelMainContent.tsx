@@ -7,7 +7,7 @@ import ShoppingCartMainContent from "./userContents/shopping/ShoppingCartMainCon
 import UserBillingMain from "./userContents/userBilling/UserBillingMain";
 import UserSettingsContent from "./userContents/setting/UserSettingsContent";
 
-export default function Component() {
+const UserPanelMainContent = () => {
   const { data, isLoading } = useGetUser();
   const { user, payments, combinedData, cart } = data || {};
 
@@ -41,3 +41,5 @@ export default function Component() {
     </div>
   );
 }
+
+export default UserPanelMainContent;

@@ -35,12 +35,12 @@ export interface AuthenticateUserData {
 
 export interface ChangePasswordData {
   userId: string;
-  data:{
+  data: {
     currentPassword: string;
     newPassword: string;
     confirmNewPassword: string;
     enteredCaptcha: string;
-  }
+  };
 }
 
 export interface UpdateProfileData {
@@ -88,4 +88,11 @@ export interface Product {
 export type AddToCartProps = {
   productId: string;
   quantity: number;
+};
+
+export type PanelAsideProps = {
+  value: string;
+  icon: any;
+  text: string;
+  tooltipText: string;
 };

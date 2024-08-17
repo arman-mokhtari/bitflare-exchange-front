@@ -1,19 +1,11 @@
 import {
-  TooltipProvider,
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
+  TooltipProvider
 } from "@/components/ui/tooltip";
 
-import {
-  CreditCardIcon,
-  LayoutDashboardIcon,
-  SettingsIcon,
-  ShoppingCartIcon,
-} from "lucide-react";
-
-import { TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { TabsList } from "@/components/ui/tabs";
 import MainLogo from "@/components/common/MainLogo";
+import { userTabItems } from "@/data/tabsData";
+import PanelTabItem from "@/components/ui/PanelTabItem";
 
 const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
   return (
@@ -25,65 +17,9 @@ const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
 
         <TooltipProvider>
           <TabsList>
-            <Tooltip>
-              <TabsTrigger
-                value="overview"
-                className="flex items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
-              >
-                <TooltipTrigger asChild>
-                  <div className="flex items-center justify-center md:gap-1">
-                    <LayoutDashboardIcon className="size-5" />
-                    <span className="hidden md:block">داشبورد</span>
-                  </div>
-                </TooltipTrigger>
-              </TabsTrigger>
-
-              <TooltipContent side="right">داشبورد</TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TabsTrigger
-                value="shoppingCart"
-                className="flex  items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
-              >
-                <TooltipTrigger asChild>
-                  <div className="flex items-center justify-center md:gap-1">
-                    <ShoppingCartIcon className="size-5" />
-                    <span className="hidden md:block">خرید ارز</span>
-                  </div>
-                </TooltipTrigger>
-              </TabsTrigger>
-
-              <TooltipContent side="right">خرید ارز دیجیتال</TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TabsTrigger
-                value="billing"
-                className="flex items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
-              >
-                <TooltipTrigger asChild>
-                  <div className="flex items-center justify-center md:gap-1">
-                    <CreditCardIcon className="size-5" />
-                    <span className="hidden md:block">فاکتورها</span>
-                  </div>
-                </TooltipTrigger>
-              </TabsTrigger>
-              <TooltipContent side="right">فاکتورها</TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TabsTrigger
-                value="settings"
-                className="flex  items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:gap-1"
-              >
-                <TooltipTrigger asChild>
-                  <div className="flex items-center justify-center md:gap-1">
-                    <SettingsIcon className="size-5" />
-                    <span className="hidden md:block">تنظیمات</span>
-                  </div>
-                </TooltipTrigger>
-              </TabsTrigger>
-
-              <TooltipContent side="right">تنظیمات</TooltipContent>
-            </Tooltip>
+            {userTabItems.map((item) => (
+              <PanelTabItem key={item.value} item={item} />
+            ))}
           </TabsList>
         </TooltipProvider>
       </nav>
