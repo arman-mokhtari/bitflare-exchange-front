@@ -18,7 +18,7 @@ import MainLogo from "@/components/common/MainLogo";
 const UserAside = ({ otherClasses }: { otherClasses?: string }) => {
   return (
     <aside className={`flex flex-row ${otherClasses}`}>
-      <nav className="sticky top-0 flex flex-row items-center gap-4 px-3 sm:flex-col sm:py-5 md:px-5">
+      <nav className="sticky top-0 flex flex-row items-center gap-4 px-3 sm:flex-col sm:py-5">
         <div className="hidden sm:block">
           <MainLogo />
         </div>
