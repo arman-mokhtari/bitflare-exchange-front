@@ -1,41 +1,69 @@
 "use client";
 
-import { TabsContent } from "../ui/tabs";
-// import { useGetUser } from "@/hooks/useAuth";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
+import { useGetData } from "@/hooks/useAuth";
+import { toPersianNumbersWithComma } from "@/utils/toPersianNumbers";
 
 const AdminPanelMainContent = () => {
-//   const { data, isLoading } = useGetUser();
-//   const { user, payments, combinedData, cart } = data || {};
+  const { isLoading, data } = useGetData();
+  const { users, payments, products } = data || {};
 
-//   if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div>Loading...</div>;
+  const totalPayments = payments.reduce(
+    (acc: number, payment: { amount: number }) => acc + payment.amount,
+    0
+  );
 
-//   const modifiedPayments = payments?.filter(
-//     (payment: { status: string }) => payment.status === "COMPLETED"
-//   );
+  const AdminOverviewCardData = [
+    {
+      title: "کاربران",
+      description: "تعداد کاربران تایید شده",
+      content: users?.length || 0,
+    },
+    {
+      title: "ارز دیجیتال",
+      description: "ارزهای دیجیتال ثبت شده",
+      content: products?.length || 0,
+    },
+    {
+      title: "سفارشات",
+      description: "تعداد سفارشات ثبت شده",
+      content: payments?.length || 0,
+    },
+    {
+      title: "مجموع سفارشات",
+      description: "مجموع مبلغ سفارشات",
+      content: totalPayments,
+    },
+  ];
 
   return (
-    <div className="grid w-full gap-4">
-      <TabsContent value="overview">
-        {/* <UserOverview
-          user={user}
-          payments={modifiedPayments}
-          currencies={combinedData}
-        /> */}
-      </TabsContent>
-
-      <TabsContent value="shoppingCart">
-        {/* <ShoppingCartMainContent cart={cart} /> */}
-      </TabsContent>
-
-      <TabsContent value="billing">
-        {/* <UserBillingMain payments={modifiedPayments} /> */}
-      </TabsContent>
-
-      <TabsContent value="settings">
-        {/* <UserSettingsContent user={user}  /> */}
-      </TabsContent>
+    <div className="grid gap-4 p-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {AdminOverviewCardData.map((card, index) => (
+          <Card key={index}>
+            <CardHeader>
+              <CardTitle className="text-xl text-primary">
+                {card.title}
+              </CardTitle>
+              <CardDescription>{card.description}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">
+                {toPersianNumbersWithComma(card.content)}
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default AdminPanelMainContent;

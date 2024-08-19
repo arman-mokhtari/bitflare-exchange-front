@@ -57,6 +57,10 @@ export async function getAllUsers(): Promise<any> {
   return http.get("/admin/user/list").then(({ data }) => data.data);
 }
 
+export async function getAllData(): Promise<any> {
+  return http.get("/admin/user/data").then(({ data }) => data.data);
+}
+
 export async function getUserById(id: string): Promise<any> {
   return http.get(`/admin/user/profile/${id}`).then(({ data }) => data.data);
 }

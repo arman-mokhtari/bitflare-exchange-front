@@ -10,6 +10,7 @@ import {
   checkOtp,
   getResendOtp,
   updateProfile,
+  getAllData,
 } from "@/services/auth/authServices";
 import { useQuery, useMutation } from "@tanstack/react-query";
 
@@ -55,6 +56,14 @@ export const useGetUsers = () =>
   useQuery({
     queryKey: ["get-users"],
     queryFn: getAllUsers,
+    retry: false,
+    refetchOnWindowFocus: true,
+  });
+
+export const useGetData = () =>
+  useQuery({
+    queryKey: ["get-data"],
+    queryFn: getAllData,
     retry: false,
     refetchOnWindowFocus: true,
   });

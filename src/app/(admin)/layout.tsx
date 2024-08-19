@@ -1,8 +1,6 @@
-import { Tabs } from "@/components/ui/tabs";
-import "../globals.css";
 import React from "react";
+import AdminHeader from "@/components/admin/adminNav/AdminHeader";
 import AdminAside from "@/components/admin/adminNav/AdminAside";
-import MainLogo from "@/components/common/MainLogo";
 
 export default function RootLayout({
   children,
@@ -10,22 +8,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen">
-      <Tabs
-        defaultValue="overview"
-        dir="rtl"
-        className="flex min-h-screen w-full bg-muted/40"
-      >
-        <AdminAside otherClasses=" z-10 hidden flex-col border-l bg-background sm:flex" />
-
-        <div className="flex w-full flex-col sm:gap-4 sm:py-4">
-          <header className="sticky top-0 z-30 flex h-14 justify-between gap-4 border-b bg-background px-4 sm:hidden sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
-            <MainLogo />
-            <AdminAside otherClasses="flex flex-row" />
-          </header>
-          <main className="flex items-start p-4">{children}</main>
-        </div>
-      </Tabs>
+    <div className="flex min-h-screen w-full flex-col">
+      <AdminHeader />
+      <div className="flex flex-1">
+        <AdminAside />
+        <main className="flex-1 p-6">{children}</main>
+      </div>
     </div>
   );
 }
