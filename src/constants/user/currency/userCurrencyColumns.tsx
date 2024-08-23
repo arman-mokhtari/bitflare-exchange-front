@@ -4,7 +4,7 @@ import { ArrowUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { MyCurrency } from "@/types";
-import UserCurrencyRequestDialog from "@/components/user/userContents/userOverview/UserCurrencyRequestDialog";
+import UserCurrencyRequestDialog from "@/components/user/tabs/userOverview/UserCurrencyRequestDialog";
 
 export const userCurrencyColumns: ColumnDef<MyCurrency>[] = [
   {

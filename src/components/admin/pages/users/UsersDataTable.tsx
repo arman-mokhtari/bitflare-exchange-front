@@ -31,19 +31,17 @@ import {
 } from "@/components/ui/table";
 import { toPersianNumbers } from "@/utils/toPersianNumbers";
 import { useState } from "react";
-import { UserPaymentColumns } from "@/constants/payment/UserPaymentColumns";
+import { UsersColumns } from "@/constants/admin/users/UsersColumns";
 
-// todo change user interface to real one
-
-export function BillingDataTable({ payments }: { payments: any }) {
+export function UsersDataTable({ users }: { users: any }) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
 
   const table = useReactTable({
-    data: payments,
-    columns: UserPaymentColumns,
+    data: users,
+    columns: UsersColumns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
@@ -61,21 +59,21 @@ export function BillingDataTable({ payments }: { payments: any }) {
   });
 
   const columnDisplayNames: Record<string, string> = {
-    invoiceNumber: "فاکتور",
-    title: "نام ارز",
-    quantity: "تعداد",
-    total: "مجموع",
-    status: "وضعیت",
+    name: "نام",
+    email: "ایمیل",
+    phoneNumber: "شماره موبایل",
+    createdAt: "تاریخ پیوستن",
+    _id: "مشاهده",
   };
 
   return (
     <div className="w-full">
       <div className="flex w-full items-center justify-between py-4">
         <Input
-          placeholder="نام ارز..."
-          value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
+          placeholder="نام..."
+          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("title")?.setFilterValue(event.target.value)
+            table.getColumn("name")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
@@ -93,7 +91,7 @@ export function BillingDataTable({ payments }: { payments: any }) {
                 .map((column) => {
                   return (
                     <DropdownMenuCheckboxItem
-                      className={`flex justify-end ${column.id === "invoiceNumber" || column.id === "quantity" ? "hidden lg:flex" : ""}`}
+                    className={`flex justify-end ${column.id === "createdAt" || column.id === "phoneNumber" ? "hidden lg:flex" : ""}`}
                       key={column.id}
                       checked={column.getIsVisible()}
                       onCheckedChange={(value) =>
@@ -118,7 +116,8 @@ export function BillingDataTable({ payments }: { payments: any }) {
                     <TableHead
                       key={header.id}
                       className={
-                        header.column.id === "invoiceNumber" || header.column.id === "quantity"
+                        header.column.id === "phoneNumber" ||
+                        header.column.id === "createdAt"
                           ? "hidden lg:table-cell"
                           : ""
                       }
@@ -145,11 +144,12 @@ export function BillingDataTable({ payments }: { payments: any }) {
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={
-                        cell.column.id === "invoiceNumber" || cell.column.id === "quantity"
+                      className={`whitespace-nowrap ${
+                        cell.column.id === "phoneNumber" ||
+                        cell.column.id === "createdAt"
                           ? "hidden lg:table-cell"
                           : ""
-                      }
+                      }`}
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
@@ -162,7 +162,7 @@ export function BillingDataTable({ payments }: { payments: any }) {
             ) : (
               <TableRow>
                 <TableCell
-                  colSpan={UserPaymentColumns.length}
+                  colSpan={UsersColumns.length}
                   className="h-24 text-center"
                 >
                   موجودی یافت نشد!

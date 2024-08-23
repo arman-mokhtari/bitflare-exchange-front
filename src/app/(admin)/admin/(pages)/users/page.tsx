@@ -1,8 +1,7 @@
+import UsersMainContent from "@/components/admin/pages/users/UsersMainContent";
 
 const Page = () => {
-  return (
-    <div>Page</div>
-  )
-}
+  return <UsersMainContent />;
+};
 
-export default Page
+export default Page;

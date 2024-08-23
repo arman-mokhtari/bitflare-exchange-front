@@ -30,7 +30,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { toPersianNumbers } from "@/utils/toPersianNumbers";
-import { userCurrencyColumns } from "@/constants/currency/userCurrencyColumns";
+import { userCurrencyColumns } from "@/constants/user/currency/userCurrencyColumns";
 import { useState } from "react";
 import { MyCurrency } from "@/types";
 

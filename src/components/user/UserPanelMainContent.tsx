@@ -2,10 +2,10 @@
 
 import { TabsContent } from "../ui/tabs";
 import { useGetUser } from "@/hooks/useAuth";
-import UserOverview from "./userContents/userOverview/UserOverview";
-import ShoppingCartMainContent from "./userContents/shopping/ShoppingCartMainContent";
-import UserBillingMain from "./userContents/userBilling/UserBillingMain";
-import UserSettingsContent from "./userContents/setting/UserSettingsContent";
+import UserOverview from "./tabs/userOverview/UserOverview";
+import ShoppingCartMainContent from "./tabs/shopping/ShoppingCartMainContent";
+import UserBillingMain from "./tabs/userBilling/UserBillingMain";
+import UserSettingsContent from "./tabs/setting/UserSettingsContent";
 
 const UserPanelMainContent = () => {
   const { data, isLoading } = useGetUser();
@@ -36,10 +36,10 @@ const UserPanelMainContent = () => {
       </TabsContent>
 
       <TabsContent value="settings">
-        <UserSettingsContent user={user}  />
+        <UserSettingsContent user={user} />
       </TabsContent>
     </div>
   );
-}
+};
 
 export default UserPanelMainContent;
