@@ -1,6 +1,4 @@
-
 import { cn } from "@/lib/utils";
-
 
 type SpotlightProps = {
   className?: string;

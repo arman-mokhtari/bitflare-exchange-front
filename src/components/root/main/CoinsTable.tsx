@@ -24,7 +24,7 @@ export default function CoinsTable() {
           </p>
         </div>
 
-        <div className="rtl overflow-hidden">
+        <div className="overflow-hidden">
           <Table className="overflow-hidden">
             <TableHeader>
               <TableRow className="!border-b-[12px] border-background">
