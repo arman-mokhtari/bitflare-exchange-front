@@ -259,3 +259,274 @@ export const testimonials = [
   },
 ];
 
+export const team = [
+  {
+    avatar:
+      "https://images.unsplash.com/photo-1511485977113-f34c92461ad9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+    name: "Martiana dialan",
+    title: "Product designer",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
+  },
+  {
+    avatar: "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg",
+    name: "Micheal colorand",
+    title: "Software engineer",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
+  },
+  {
+    avatar: "https://randomuser.me/api/portraits/women/79.jpg",
+    name: "Brown Luis",
+    title: "Full stack engineer",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
+  },
+  {
+    avatar: "https://randomuser.me/api/portraits/women/63.jpg",
+    name: "Lysa sandiago",
+    title: "Head of designers",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
+  },
+  {
+    avatar: "https://randomuser.me/api/portraits/men/86.jpg",
+    name: "Daniel martin",
+    title: "Product designer",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
+  },
+  {
+    avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+    name: "Vicky tanson",
+    title: "Product manager",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
+  },
+];
+
+export const dropdownNavs = [
+  {
+    label: "محصولات",
+    navs: [
+      {
+        title: "تحلیل‌ها",
+        desc: "ابزارهای تحلیل داده",
+        path: "/",
+        icon: "",
+      },
+      {
+        title: "گزارشات",
+        desc: "ایجاد و مشاهده گزارشات",
+        path: "/",
+        icon: "",
+      },
+    ],
+  },
+  {
+    label: "منابع",
+    navs: [
+      {
+        title: "وبلاگ",
+        desc: "مطالب و مقالات جدید",
+        path: "/",
+        icon: "",
+      },
+      {
+        title: "جامعه",
+        desc: "ارتباط با کاربران",
+        path: "/",
+        icon: "",
+      },
+    ],
+  },
+  {
+    label: "شرکت",
+    navs: [
+      {
+        title: "درباره ما",
+        desc: "اطلاعات درباره بیتفلر",
+        path: "/about",
+        icon: "",
+      },
+      {
+        title: "فرصت‌های شغلی",
+        desc: "همکاری با ما",
+        path: "/",
+        icon: "",
+      },
+    ],
+  },
+];
+
+export const navigation = [
+  {
+    title: "خانه",
+    path: "/",
+    isDropdown: false,
+    isCloseOnClick: true,
+    isActiveUser: false,
+    isAdmin: false,
+  },
+  {
+    title: "امکانات",
+    path: "/",
+    isDropdown: true,
+    navs: dropdownNavs,
+    isCloseOnClick: false,
+    isActiveUser: false,
+    isAdmin: false,
+  },
+  {
+    title: "ارتباط با ما",
+    path: "/contact",
+    isDropdown: false,
+    isCloseOnClick: true,
+    isActiveUser: false,
+    isAdmin: false,
+  },
+  {
+    title: "پنل کاربر",
+    path: "/user",
+    isDropdown: false,
+    isCloseOnClick: true,
+    isActiveUser: true,
+    isAdmin: false,
+  },
+  {
+    title: "پنل ادمین",
+    path: "/admin",
+    isDropdown: false,
+    isCloseOnClick: true,
+    isActiveUser: false,
+    isAdmin: true,
+  },
+];
+
+export const currencyData: any = [
+  {
+    id: "m5gr84i9",
+    amount: 316,
+    currency: "بیت‌کوین",
+  },
+  {
+    id: "3u1reuv4",
+    amount: 242,
+    currency: "اتریوم",
+  },
+  {
+    id: "derv1ws0",
+    amount: 837,
+    currency: "لایت‌کوین",
+  },
+  {
+    id: "5kma53ae",
+    amount: 874,
+    currency: "ریپل",
+  },
+  {
+    id: "bhqecj4p",
+    amount: 721,
+    currency: "دوج‌کوین",
+  },
+  {
+    id: "js5gw3e1",
+    amount: 512,
+    currency: "بایننس کوین",
+  },
+  {
+    id: "kz9x7h3l",
+    amount: 150,
+    currency: "کاردانو",
+  },
+  {
+    id: "hy7m4k8v",
+    amount: 680,
+    currency: "پولکادات",
+  },
+  {
+    id: "vc8n9w4j",
+    amount: 299,
+    currency: "سولانا",
+  },
+  {
+    id: "lw3s5b2p",
+    amount: 430,
+    currency: "چین لینک",
+  },
+  {
+    id: "mq2r7v5z",
+    amount: 600,
+    currency: "استلار",
+  },
+  {
+    id: "qw8t3l1m",
+    amount: 745,
+    currency: "ترون",
+  },
+  {
+    id: "zr4k9p8d",
+    amount: 390,
+    currency: "یونی سواپ",
+  },
+  {
+    id: "jt7w2f4r",
+    amount: 520,
+    currency: "آوالانچ",
+  },
+  {
+    id: "py6l8h3c",
+    amount: 815,
+    currency: "تتا",
+  },
+  {
+    id: "sf9t6b7x",
+    amount: 410,
+    currency: "ماتیک",
+  },
+  {
+    id: "bk8j3m2z",
+    amount: 375,
+    currency: "فایل کوین",
+  },
+  {
+    id: "mv3p6k5w",
+    amount: 555,
+    currency: "دش",
+  },
+  {
+    id: "ph4l2j7t",
+    amount: 230,
+    currency: "زد کش",
+  },
+  {
+    id: "rc8n1m6q",
+    amount: 695,
+    currency: "مونرو",
+  },
+  {
+    id: "tg5k8v9b",
+    amount: 850,
+    currency: "تزوس",
+  },
+  {
+    id: "wf7m4b2y",
+    amount: 215,
+    currency: "وی چین",
+  },
+  {
+    id: "ql2j8v9d",
+    amount: 475,
+    currency: "ایاس",
+  },
+  {
+    id: "hm9k3f1r",
+    amount: 330,
+    currency: "نئو",
+  },
+  {
+    id: "nk7t4l3m",
+    amount: 250,
+    currency: "آیوتا",
+  },
+];

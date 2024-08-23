@@ -3,7 +3,9 @@ import { Inter, Vazirmatn } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/header/Navbar";
+import { Toaster } from "@/components/ui/toaster";
+import QueryProvider from "@/providers/QueryClientProvider";
+import React from "react";
 
 const vazir = Vazirmatn({
   subsets: ["arabic"],
@@ -47,8 +49,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
+          <QueryProvider>
+            {children}
+            <Toaster />
+          </QueryProvider>
         </ThemeProvider>
       </body>
     </html>

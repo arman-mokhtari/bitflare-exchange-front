@@ -87,3 +87,20 @@
     background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
   }
 }
+
+/* scroller */
+::-webkit-scrollbar {
+  width: 0;
+}
+/* scroller */
+
+/* Input Number Arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* Input Number Arrows */
