@@ -120,7 +120,7 @@ const CompleteProfile = () => {
                 <FormItem>
                   <FormLabel>ایمیل</FormLabel>
                   <FormControl>
-                    <Input autoFocus type="email" {...field} />
+                    <Input type="email" {...field} />
                   </FormControl>
 
                   <FormMessage />

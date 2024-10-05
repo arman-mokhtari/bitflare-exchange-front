@@ -121,7 +121,7 @@ const UserInfoSettings = ({ user }: any) => {
             render={({ field }) => (
               <FormItem className="grid gap-2">
                 <FormLabel>
-                  پیشه{" "}
+                  شغل{" "}
                   <span className="text-xs text-muted-foreground">
                     (اختیاری)
                   </span>
